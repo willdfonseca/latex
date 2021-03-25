@@ -53,3 +53,21 @@ The LaTeX (unofficial) template was created based upon the instructions and Ms W
 Find the template [HERE](https://github.com/willdfonseca/latex/tree/main/Reproduced%20Sound/2020). :ocean: Or also available in [Overleaf](https://www.overleaf.com/read/xxrypjyqhkcn).
 
 ##
+
+###     :speaker: Unofficial Acustica 2020 Template
+Acústica 2020 comprises: XI Iberian Congress of Acoustics, 51º Spanish Congress on Acoustics, and TecniAcústica (2020). From the original website http://www.spacustica.pt/acustica2020/index.html (in portuguese):
+
+> Devido à crise Pandémica, houve necessidade de adiar o Congresso Acústica2020, que integra o Congresso Espanhol de Acústica - TecniAcústica 2020, o qual irá então ocorrer entre os dias 21 a 23 de outubro de 2020, sob os auspícios da Universidade do Algarve.  
+No entanto, e com muita pena nossa, a fim de evitar as aglomerações decorrentes de participação presencial, o Congresso irá decorrer no formato E-Congress, ou seja, todo o programa se manterá idêntico, como se de um Congresso normal se tratasse, mas agora sem a presença de congressistas. Assim, os participantes irão ser convidados a enviar um vídeo das suas apresentações, que serão emitidas em canal próprio (Sala Virtual), à hora e no "slot" programados, recebendo todos os congressistas uma senha de acesso ao sistema para poderem visualizar as apresentações e também participar nas discussões respetivas via plataforma Zoom.
+
+The LaTeX (unofficial) template was created based upon the instructions and Ms Word template (sent by the organizers). A few improvements were included as typo corrections and examples.
+
+Find the templates [HERE](https://github.com/willdfonseca/latex/tree/main/Acustica%202020) (in GitHub). :ocean: 
+Or also available in Overleaf:
+
+ 1. [Portuguese](https://www.overleaf.com/read/jxhgpdbkjhwh); and
+ 2. [Spanish](https://www.overleaf.com/read/rbrcrvkqswnv).
+
+PS: a special thank to Fernando Diaz, concerning the support on spanish text.
+
+##
