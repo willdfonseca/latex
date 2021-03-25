@@ -2,7 +2,7 @@
 
 Hi folks! This repository is intended to share tools, hints, and LaTeX templates developed by Will D'Andrea Fonseca.
 
-##   :books: FIA 2020 Congress Templates
+##   :books: Official FIA 2020 Congress Templates
 FIA 2020 is the **12th  Ibero-American Acoustics Congress** integrating with **XXIX Sobrac Meeting**.
 Per the website at:
  - https://fia2020.com.br/
