@@ -1,0 +1,98 @@
+% #################################################################################
+% LaTeX Template LaTeX for Inter-Noise 2021
+% #################################################################################
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Improved version by Prof. William D'Andrea Fonseca - Acoustical Engineering UFSM - Brazil
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{iftex} \ifpdf \input{glyphtounicode} \pdfminorversion=7 \pdfimageresolution=300 \pdfgentounicode=1\fi 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Pick the one corresponding to your system
+%\usepackage[latin1]{inputenc}
+%\usepackage[ansinew]{inputenc}
+\usepackage[utf8x]{inputenc}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx, times}
+\usepackage{geometry}
+\geometry{top=2cm,bottom=2cm,left=2.0cm,right=2.0cm}
+\pagestyle{empty}
+
+\usepackage{titlesec}
+\titleformat{\section}
+{\bfseries\uppercase}{\thesection.}{1em}{}
+\titleformat{\subsection}
+{\bfseries}{\thesection.\thesubsection.}{1em}{}
+\renewcommand{\labelitemi}{\textendash}
+\renewcommand{\labelitemii}{\textendash}
+
+\usepackage{graphicx} % used to insert the figure
+\usepackage{multirow} % used for the table
+%\usepackage[font=it]{caption}
+%\usepackage{cite} % W
+%\usepackage{breakurl} % W
+\usepackage{indentfirst}
+\usepackage{amsmath, amssymb, amsfonts, bm}
+\usepackage{txfonts}
+\usepackage{enumitem}
+\usepackage[table,xcdraw,dvipsnames]{xcolor} % W
+\usepackage{enumitem}
+
+\hyphenpenalty=10000
+\setlength{\emergencystretch}{3em}
+
+\columnsep 1cm
+\setlength{\parindent}{0.5cm}
+
+\titlespacing*{\subsection}{0pt}{1.5em}{0.2em}
+
+\renewcommand\eqref[1]{Equation~\ref{#1}}
+
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\arraystretch}{1.25}
+
+\renewcommand{\refname}{References} 
+\setlength{\footnotesep}{12pt} 
+%Some stuff with item spacing in lists, related to enumitem package.   See individual lists. 
+%\setlist[2]{noitemsep}
+%\setenumerate{noitemsep}
+
+% Sort out linespacing with references
+\newlength{\bibitemsep}\setlength{\bibitemsep}{.2\baselineskip plus .05\baselineskip minus .05\baselineskip}
+\newlength{\bibparskip}\setlength{\bibparskip}{0pt}
+\let\oldthebibliography\thebibliography
+\renewcommand\thebibliography[1]{%
+  \oldthebibliography{#1}%
+  \setlength{\parskip}{\bibitemsep}%
+  \setlength{\itemsep}{\bibparskip}%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% More packs and commands
+\usepackage{float,xspace}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,anchorcolor=black,urlcolor=blue,filecolor=blue,runcolor=blue]{hyperref}
+\usepackage{url,xurl}
+\urlstyle{same}
+
+\usepackage{bookmark}
+
+\usepackage[square,sort&compress,comma,numbers]{natbib}
+\renewcommand{\bibsection}{\section*{References}}
+\setlength{\bibsep}{.1\baselineskip plus .05\baselineskip minus .05\baselineskip}
+
+\usepackage{soul,soulutf8}
+\usepackage[colorinlistoftodos,prependcaption,portuguese,textsize=scriptsize]{todonotes}
+\newcommand{\hx}[1]{{\sethlcolor{lime}\hl{#1}\xspace}\addcontentsline{tdo}{todo}{#1}}
+% Use \hx{to highlight} and also include the comment in the ``to-do'' list.
+
+%%%% Typography and hyphenation 
+\usepackage[final,kerning=true,spacing=true]{microtype}
+\widowpenalty=1000
+\clubpenalty=1000
+\tolerance=3000
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand*{\doi}[1]{doi:\href{http://dx.doi.org/#1}{ #1}}
+\newcommand*{\vph}[1]{\vphantom{\rule{2pt}{#1}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% EOF
+						

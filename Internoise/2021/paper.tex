@@ -1,0 +1,148 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+
+\noindent
+This paper is a template to which you can refer for your paper.  I suggest that the first step is to compile this document and make sure everything is working on your computer.  Your .pdf file should match What you should see with Template.pdf. 
+
+It is anticipated that the INTER-2021 WASHINGTON DC Proceedings will be distributed to the congress participants on a memory stick. 
+
+\begin{itemize}[itemsep=5pt]
+\item The purpose of these instructions is to ensure the uniformity of the publication. 
+\item The manuscript should be submitted as a PDF file whose font is 12-point ``Times New Roman''.
+\item The length of a manuscript should be at most 12 pages and at least four pages. 
+\item Only manuscripts in English will be accepted for the Proceedings. 
+\item You must not insert any page number, header or foot note except the e-mail addresses on the first page of the manuscript.
+\end{itemize}
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Manuscript Format}
+
+\noindent
+Margin settings, paragraphs, figure and table are explained here. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Margin Settings}
+
+\begin{itemize}[noitemsep]
+\item The paper size is A4.
+\item Margin settings: Top (2 cm), Bottom (2 cm), Left (2 cm), and Right (2 cm).
+\item The text should be justified from left to right.
+\item The first line of the paragraphs should be indented by 0.5 cm. 
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Paragraphs}
+
+\begin{itemize}[noitemsep]
+\item There should be one empty line between headings and subheadings.
+\item Major headings shall be numerically ordered as 1., 2., ?., in bold font an all upper case.
+\item Level 2 subheading should be 2.1., 2.2., ..., in bold font.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Figures, Equations, Tables}
+
+\noindent
+All figures, tables, equations, photos, graphs, etc., must be shown shortly after they are mentioned, placed at the centre of a page. 
+
+The captions of figures (which may include photos) are put below the figures and photos (see Figure~\ref{fig:1}).  They are centered if one line long, and fully justified if longer than one line.  They should be referred to in the text as Figure~\ref{fig:1}, Figure 2, etc. 
+
+\begin{figure}[h!]
+\begin{center}
+  \includegraphics[width=2in,page=2]{internoise-2021.pdf}
+  \end{center}
+  \caption{The INTER-NOISE 2021 logo features many famous buildings in Washington DC.}
+  \label{fig:1}
+\end{figure}
+
+The equations should be referenced as Equation~\ref{Eq:1}, Equation 2, etc. For example:  Equation~\ref{Eq:1}, the formula for estimating the mean value, is:
+
+\begin{equation}
+\bar{X} = \frac{1}{N} \sum_{i=1}^{N} X_i ,
+\label{Eq:1}
+\end{equation}
+
+\noindent
+where $X_i$, $=1,2,...N$ denote the $N$ measurements, and $\bar{X}$ denotes the estimated mean value. 
+
+
+The caption for a table should be placed just above the table and the table number should be Table~\ref{Tab:1}, Table 2,.... Tables should be referred to in the text as, e.g., Table~\ref{Tab:1}.
+
+\begin{table}[H]
+\caption{Example of values displayed in a table.}
+\label{Tab:1}
+\begin{center}
+\begin{tabular}{c c c } 
+ \hline
+ \textbf{Test Number} &  \textbf{Variable 1}& \textbf{Variable 2}  \\ [0.5ex] 
+ \hline
+ 1 & 6 & 87837 \\ 
+ \hline
+ 2 & 7 & 78  \\
+ \hline
+ 3 & 545 & 778 \\ [1ex] 
+ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Referencing other work}
+
+\noindent
+Use a numerical referencing system, in order of citation.  For Latex users it should take care of this for you if you use bibtex.   Either put the references in this file or use a .bib file and let Latex pull out the references that you are using.  The .bib file in this example is sample.bib..  The Latex references cited here are:  \cite{latexcompanion, knuthwebsite}.  I have included some additional references as examples for format \cite{Poulsen1, Ryherd2007, Tang2006, May96,  Zwicker_Fastl_2006, ANSI_S3_4}
+
+\vspace{\baselineskip}
+
+Use the unsrt bibliography style file.  
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Important uploading information}
+
+\noindent
+Here are the instructions for submitting manuscripts. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Submission of Manuscripts}
+
+\noindent
+Submit your manuscript as a PDF file using the link on the INTER-NOISE 2021 website (www.internoise2021.org). 
+
+Before submitting the manuscript, you need to pay the registration fee and if you submit multiple manuscripts, you need to pay the extra nominal charge for each additional manuscript.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Conversion to PDF}
+
+\noindent
+Before submission, you need to check your PDF file carefully to be sure that PDF conversion was done properly and there is no error when the PDF file is opened. The following problems may occur.
+\begin{itemize}[noitemsep]
+\item
+Symbols are missed.
+\item
+Symbols are converted incorrectly, especially mathematical symbols.
+\item
+Figures are missed.
+\item
+Indentation is not correct.
+\end{itemize}
+
+The author is responsible for sorting out these problems and the manuscript  in the Congress Proceeding will be as it was received.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusions}
+
+\noindent
+Please follow the instructions.  Mostly the Latex stuff will look after you, but check everything is working. 
+Recompile this document to make sure you get the same as the ``What you should see with Template'' PDF.    
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Acknowledgements} \addcontentsline{toc}{section}{Acknowledgements}
+
+\noindent
+We gratefully acknowledge the authors for submitting their work to INTER-NOISE 2021 WASHINGTON DC.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% EOF
