@@ -1,4 +1,3 @@
-
 # Will's LaTeX repository!
 
 Hi folks! This repository is intended to share tools, hints, and LaTeX templates developed by Will D'Andrea Fonseca.
@@ -26,9 +25,9 @@ Ms. Word templates are also being constructed and soon will be also available.
 ##
 
 ###   :books: Official Segav 2020 Congress Templates
-Segav is the **(Brazilian) Southern Congress on Acoustics and Vibration**, or in good Brazilian portuguese **Seminário Gaúcho de Acústica e Vibrações**. It is organized by the branch of the Rio Grande do Sul state, out of the Brazilian Society of Acoustics ([Sobrac](http://acustica.org.br/)).
+Segav is the **(Brazilian) Southern Congress on Acoustics and Vibration**, or in good Brazilian portuguese ***Seminário Gaúcho de Acústica e Vibrações***. It is organized by the branch of the Rio Grande do Sul state, out of the Brazilian Society of Acoustics ([Sobrac](http://acustica.org.br/)).
 
-The congress (short paper) official LaTeX and Ms Word templates (in Brazilian portuguese) are simutaneously hosted in [Overleaf](https://pt.overleaf.com/read/vqrvdftgcfkg) and [GitHub](https://github.com/willdfonseca/fia2020).
+The congress (short paper) official LaTeX and Ms Word templates (in Brazilian portuguese) are simutaneously hosted in [Overleaf](https://pt.overleaf.com/read/vqrvdftgcfkg) and [GitHub](https://github.com/willdfonseca/latex/tree/main/Segav/2020).
 
 A special thanks to Rafael Heissler, for adapting the LaTeX version to Ms. Word
 
@@ -39,6 +38,7 @@ Modelos de artigos curtos para o Segav 2020 (Seminário Gaúcho de Acústica e V
 Um agradecimento especial ao Rafael Heissler, por adaptar a versão de de LaTeX para Ms Word.
 > O texto básico e o template foi desenvolvido pelo Prof. Will D'Andrea Fonseca.
 
+##
 
 ## 🎨 Unofficial LaTeX templates
 
@@ -61,7 +61,7 @@ Find the template [HERE](https://github.com/willdfonseca/latex/tree/main/Interno
 
 ##
 
-###     :speaker: Unofficial Reproduced Sound 2020 Template
+###     :sound: Unofficial Reproduced Sound 2020 Template
 Reproduced Sound Conference is organized by the Institute of Acoustics (IoA, UK). 
 From the original website https://reproducedsound.co.uk (and [IoA website](https://www.ioa.org.uk/civicrm/event/info?id=535&reset=1)):
 
@@ -75,7 +75,7 @@ Find the template [HERE](https://github.com/willdfonseca/latex/tree/main/Reprodu
 
 ##
 
-###     :speaker: Unofficial Acustica 2020 Template
+###     :sound: Unofficial Acustica 2020 Template
 Acústica 2020 comprises: XI Iberian Congress of Acoustics, 51º Spanish Congress on Acoustics, and TecniAcústica (2020). From the original website http://www.spacustica.pt/acustica2020/index.html (in portuguese):
 
 > Devido à crise Pandémica, houve necessidade de adiar o Congresso Acústica2020, que integra o Congresso Espanhol de Acústica - TecniAcústica 2020, o qual irá então ocorrer entre os dias 21 a 23 de outubro de 2020, sob os auspícios da Universidade do Algarve.  
@@ -90,5 +90,21 @@ Or also available in Overleaf:
  2. [Spanish](https://www.overleaf.com/read/rbrcrvkqswnv).
 
 PS: a special thank to Fernando Diaz, concerning the support on spanish text.
+
+##
+
+###   :sound: Unofficial Internoise 2020 (improved) Template
+Internoise 2020 is the 49th International Congress and Exposition on Noise Control Engineering. The conference was virtual due to the world pandemic situation. The official website is https://internoise2020.org.
+
+Starting from the official LaTeX template, the (unofficial) improved version [in the repository] was created. Improvements:
+
+ - Logo with high quality;
+ - Typos were correctect;
+ - Metadata capable;
+ - Natbib to manage references;
+ - Organization of the tex files; and
+ - Other minor corrections.
+
+Find the template [HERE](https://github.com/willdfonseca/latex/tree/main/Internoise/2020). :ocean: Or also available in [Overleaf](https://www.overleaf.com/read/pbfdrdrmrpdv).
 
 ##
