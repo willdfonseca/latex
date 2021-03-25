@@ -1,0 +1,50 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Template para de LaTeX para a V SeGAV-e
+%%% Seminário Gaúcho de Acústica e Vibrações
+%%% Release 25/07/2020
+%%%	Desenvolvido por por Prof. William D'Andrea Fonseca
+%%% will.fonseca@eac.ufsm.br
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Edição
+\Revista{V SeGAV-e}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Cabeçalho
+\fancypagestyle{plain}{ \fancyhf{} \fancyhead[CE,CO]{} \chead{} \setlength{\headheight}{1.2cm} \setlength{\headsep}{16pt}
+\fancyhead[RE]{\fontsize{10}{11}\selectfont \NumDataRevista\; \raisebox{-0.5mm}{\includegraphics[height=6mm,page=2]{segav.pdf}}}
+\fancyhead[LO]{\raisebox{-0.5mm}{\includegraphics[height=6mm,page=2]{segav.pdf}}  \fontsize{10}{11}\selectfont \NumDataRevista\; }
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[CE,CO]{\flushleft\fontsize{8.5}{10}\selectfont \quad\quad 
+%% Autores e Título
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\;\; \AutoresArtigo             \\ \quad\quad\;\; 
+\TituloCurtoArtigo
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+}
+\fancyhead[CO]{\flushright\fontsize{8.5}{10}\selectfont 
+%% Autores e Título
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\AutoresArtigo              \;\;\quad\quad\quad\quad\\  
+\TituloCurtoArtigo          \quad\quad\; 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+}
+\lfoot{} \cfoot{} \rfoot{}
+\renewcommand{\headrulewidth}{0.4pt}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% Cabeçalho da primeira página %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fancypagestyle{firststyle}{  %\setlength{\headheight}{2.2cm} \setlength{\headsep}{16pt}
+\fancyhf{} \fancyhead[CE,CO]{} \chead{} \renewcommand{\headrulewidth}{0pt}
+\fancyhead[LE,RO]{}\fancyhead[LO,RE]{} \lfoot{} \cfoot{} \rfoot{} 
+%\fancyhead[C]{\includegraphics[width=1\textwidth,page=3]{segav.pdf}}
+%\chead{\includegraphics[width=1\textwidth,page=3]{segav.pdf}}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% PDF Info
+\hypersetup{pdftex,
+            pdfauthor={\AutoresArtigo},
+            pdftitle={\TituloCompletoArtigo},
+            pdfsubject={\PalavrasChaveArtigo},
+            pdfkeywords={\PalavrasChaveArtigo},
+            pdfproducer={SeGAV - Template Prof. William D'Andrea Fonseca},
+            pdfcreator={Latex with PDFLatex},
+						pdfstartview={FitH}}

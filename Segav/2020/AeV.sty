@@ -1,0 +1,313 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Template para de LaTeX para a V SeGAV-e
+% Seminário Gaúcho de Acústica e Vibrações
+%%% Release 25/07/2020
+%%%	Desenvolvido por por Prof. William D'Andrea Fonseca
+%%% will.fonseca@eac.ufsm.br
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Entrada e tipografia
+\usepackage[english,brazilian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern} 
+\usepackage[sc]{mathpazo}
+\usepackage{tgpagella}
+\usepackage{fourier-orns}
+
+\usepackage[absolute,overlay]{textpos}
+  \setlength{\TPHorizModule}{1mm}
+  \setlength{\TPVertModule}{1mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Check if the compilation is a PDF
+\usepackage{iftex}    
+\ifpdf \input{glyphtounicode} \pdfminorversion=7 \pdfimageresolution=300 
+\pdfgentounicode=1\fi 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Para ajuste de língua
+\newcommand{\txtEN}{\selectlanguage{english}} 
+\newcommand{\txtBR}{\selectlanguage{brazil}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Para documentação de códigos
+\usepackage{Codes2Latex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Ajuste de página e margens
+\usepackage[top=2.3cm, bottom=2cm, left=2cm, right=2cm, headsep=8mm]{geometry}
+%\usepackage{showframe}
+\setlength{\columnsep}{1.10cm}
+\setlength{\parskip}{8pt}%
+\setlength{\parindent}{0pt}%
+\usepackage{setspace}
+\singlespacing	% Espaço simples entre linha
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Tipografia e hifenização
+\usepackage[final,kerning=true,spacing=true]{microtype}
+\widowpenalty=1000
+\clubpenalty=1000
+\tolerance=3000
+
+\usepackage{etoolbox} %% Para não quebrar as referências
+%\makeatletter
+%\AtBeginEnvironment{thebibliography}{%
+	 %\interlinepenalty=10000
+   %\clubpenalty10000
+   %\@clubpenalty \clubpenalty
+   %\widowpenalty10000}
+%\makeatother
+
+\let\OLDthebibliography\thebibliography %% Espaçamento entre itens
+\renewcommand\thebibliography[1]{
+  \OLDthebibliography{#1}
+  \setlength{\parskip}{4pt}
+  \setlength{\itemsep}{0pt plus 0.2ex}
+	\linespread{0.98}\selectfont
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Matemática e equações
+\usepackage{amsmath,amsfonts,amssymb}
+
+\usepackage{bigints,nicefrac}
+\usepackage{upgreek}
+\usepackage{relsize}
+
+% Espaço envolta das equações
+\AtBeginDocument{%
+ \abovedisplayskip=10pt plus 3pt minus 9pt
+ \abovedisplayshortskip=5pt plus 3pt
+ \belowdisplayskip=12pt plus 3pt minus 9pt
+ \belowdisplayshortskip=7.5pt plus 3pt minus 4pt
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Figuras e floats
+\usepackage{graphicx,color}
+\usepackage[labelformat=parens]{subfig}
+\usepackage{xcolor}   
+
+\usepackage{xspace,fancyhdr,float,calc}
+ \setlength{\textfloatsep}{10pt}
+ \setlength{\intextsep}{10pt}
+ \setlength{\floatsep}{10pt}
+
+\usepackage{stfloats} \fnbelowfloat %%% Para usar [b] em figure* e table*
+
+\usepackage{multicol, wasysym, shapepar}
+
+%%% To correct continued float %%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\newcommand\resetsubfigs{\setcounter{sub\@captype}{0}}
+\makeatother
+
+\renewcommand{\figurename}{Figura:}
+
+\usepackage{enumitem} % http://ctan.org/pkg/enumitem
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Links e URL
+\ifpdf\usepackage{pdfpages}\fi
+\PassOptionsToPackage{hyphens}{url}
+\usepackage[hyperindex,pagebackref=false,pdfusetitle,pdfa=true]{hyperref}
+\hypersetup{plainpages=false,colorlinks,breaklinks,linktocpage,hypertexnames=true,naturalnames=false}
+\hypersetup{linkcolor=black,citecolor=black,filecolor=black,urlcolor=blue} 
+\usepackage{url}  
+
+%%% References %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Citações com números
+\usepackage{cite} %%% Para que um range de artigos fique como [1-5], por exemplo
+\usepackage[num,abnt-doi=expand,abnt-full-initials=yes,bibjustif,abnt-etal-list=0,abnt-etal-cite=3,abnt-doi=link,hyphens]{abntex2cite} %% Por número
+\citebrackets[] 
+%\newcommand*{\doi}[1]{doi:\href{http://dx.doi.org/#1}{ #1}}
+
+%\usepackage{fnpos}  \makeFNbelow
+
+% Ajusta lista de referências
+\makeatletter 
+\renewcommand\@biblabel[1]{#1.\;} 
+\makeatother
+
+\newcommand{\fontrefs}{\footnotesize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Caption
+\usepackage[font=footnotesize,labelfont=bf,justification=centering, margin=4pt,parskip=0pt]{caption}
+\DeclareSubrefFormat{myparens}{#1~(#2)}
+\captionsetup[subfloat]{subrefformat=myparens,font=footnotesize,labelfont=bf,captionskip=10pt}
+\captionsetup[table]{belowskip=0pt,aboveskip=5pt}	
+\captionsetup[figure]{belowskip=0pt,aboveskip=14pt}
+
+
+%%% Nota de rodapé %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[bottom,flushmargin,hang,multiple]{footmisc}
+%\usepackage[bottom]{footmisc}
+
+\interfootnotelinepenalty=10000
+
+%% Para a borda do resumo %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Configuração de títulos e seções
+\usepackage{titlesec}
+
+\titleformat{\section}
+  {\normalfont\fontsize{12}{14.5}\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsection}
+  {\normalfont\fontsize{12}{14.5}\bfseries}{\thesubsection}{0.5em}{}
+\titleformat{\subsubsection}
+  {\normalfont\fontsize{12}{14.5}\bfseries}{\thesubsubsection}{0.5em}{}
+	
+%\titlespacing*{\section}{0pt}{-1pt plus 1pt minus 1pt}{-4pt plus 1pt minus 1pt}
+%\titlespacing*{\subsection}{0pt}{5pt plus 1pt minus 1pt}{-4pt plus 1pt minus 1pt}
+%\titlespacing*{\subsubsection}{0pt}{-1pt plus 1pt minus 1pt}{-4pt plus 1pt minus 1pt}
+
+\titlespacing*{\section}{0pt}{-1pt}{-4pt}
+\titlespacing*{\subsection}{0pt}{5pt}{-4pt}
+\titlespacing*{\subsubsection}{0pt}{-1pt}{-4pt}
+
+%\titlespacing{command}{left spacing}{before spacing}{after spacing}[right]
+% spacing: how to read {12pt plus 4pt minus 2pt}
+%           12pt is what we would like the spacing to be
+%           plus 4pt means that TeX can stretch it by at most 4pt
+%           minus 2pt means that TeX can shrink it by at most 2pt
+%           This is one example of the concept of, 'glue', in TeX
+
+%%% Tabelas e quadros %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{booktabs,colortbl}
+\usepackage{threeparttable}
+\newcommand{\ratb}[1]{\renewcommand{\arraystretch}{#1}}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{V}{>{\centering\arraybackslash} m{.4\linewidth} }
+\newcolumntype{A}[2]{%
+    >{\minipage{\dimexpr#1\linewidth-2\tabcolsep-#2\arrayrulewidth\relax}\vspace\tabcolsep}%
+    c<{\vspace\tabcolsep\endminipage}}
+
+\newcommand{\mymulticolumn}[3]{\multicolumn{#1}{>{\columncolor{\RowColorName}}#2}{#3}}
+\newcommand{\SetRowColor}[1]{\noalign{\gdef\RowColorName{#1}}\rowcolor{\RowColorName}}
+%% Some colors
+\definecolor{framecolor}{RGB}{226,215,255}	
+% Colors for tables
+\definecolor{toptb}{RGB}{221,239,255}
+\definecolor{lighttb}{RGB}{255,247,221}
+\definecolor{lightlinetb}{RGB}{208,239,255}
+\definecolor{purple}{RGB}{112,48,160}
+\definecolor{gold}{RGB}{255,192,0}
+\definecolor{LightGreen}{RGB}{235,255,251}
+\definecolor{LightRed}{RGB}{255,237,237}
+\definecolor{LightOrange}{RGB}{255,250,237}
+\definecolor{LightOrange2}{RGB}{255,235,193}
+\definecolor{Green02}{rgb}{0,0.5,0}
+\definecolor{Orange02}{rgb}{1,0.6,0.2}
+\definecolor{LightBlue}{RGB}{212,237,255}
+
+%%%% Cria o tipo de objeto quadro %%%%%%%%%%%%%%%%%%
+\usepackage{newfloat} 
+\DeclareFloatingEnvironment[
+    fileext=loq,
+    listname={Lista de Quadros},
+    name=Quadro,
+    placement={!h},
+    within=none,
+]{quadro}
+
+%%% Nomenclatura %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{etoolbox}
+\usepackage{nomencl}
+
+\renewcommand{\nomname}{Nomenclatura} %%% Ajusta nome
+
+\makeatletter %%% Remove o título
+\def\thenomenclature{%
+  \@ifundefined{chapter}%
+  {}%
+  {}%
+  \nompreamble
+  \list{}{%
+    \labelwidth\nom@tempdim
+    \leftmargin\labelwidth
+    \advance\leftmargin\labelsep
+    \itemsep\nomitemsep
+    \let\makelabel\nomlabel}}
+\makeatother
+
+\makenomenclature % Cria lista
+
+%%% Head of sections
+\newcommand\grouphead[1]{%
+  \rlap{%
+    \parbox{\columnwidth}{\textbf{#1 \hrulefill}}%
+  }\hfill
+}
+
+\setlength{\nomitemsep}{-0.5\parsep} %% Espaçamento entre itens
+
+%%% Create Groups
+\renewcommand{\nomgroup}[1]{%
+  \ifx#1A\relax
+    \item[\grouphead{Símbolos gerais}]
+  \fi
+  \ifx#1G\relax
+    \item[\grouphead{Símbolos gregos}]
+  \fi
+  \ifx#1P\relax
+    \item[\grouphead{Acrônimos e abreviaturas}]
+  \fi
+  \ifx#1M\relax
+    \item[\grouphead{Operadores matemáticos e convenções}]
+  \fi	
+  \ifx#1O\relax
+    \item[\grouphead{--}]
+  \fi
+  \ifx#1T\relax
+    \item[\grouphead{Símbolos do apêndice}]
+  \fi						
+  \bigskip}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Comando para automação
+
+\providecommand{\NumDataRevista}{}
+\newcommand{\Revista}[1]{\renewcommand{\NumDataRevista}{#1}}
+
+\providecommand{\AutoresArtigo}{}
+\newcommand{\Autores}[1]{\renewcommand{\AutoresArtigo}{#1}}
+
+\providecommand{\AutoresFiliacoesArtigo}{}
+\newcommand{\AutoresFiliacoes}[1]{\renewcommand{\AutoresFiliacoesArtigo}{#1}}
+
+\providecommand{\FiliacoesArtigo}{}
+\newcommand{\Filiacoes}[1]{\renewcommand{\FiliacoesArtigo}{#1}}
+
+\providecommand{\TituloCompletoArtigo}{}
+\newcommand{\TituloCompleto}[1]{\renewcommand{\TituloCompletoArtigo}{#1}}
+
+\providecommand{\TituloCurtoArtigo}{}
+\newcommand{\TituloCurto}[1]{\renewcommand{\TituloCurtoArtigo}{#1}}
+
+\providecommand{\TitleArticleArtigo}{}
+\newcommand{\TitleArticle}[1]{\renewcommand{\TitleArticleArtigo}{#1}}
+
+\providecommand{\ResumoArtigo}{}
+\newcommand{\Resumo}[1]{\renewcommand{\ResumoArtigo}{#1}}
+
+\providecommand{\AbstractArtigo}{}
+\newcommand{\Abstract}[1]{\renewcommand{\AbstractArtigo}{#1}}
+
+\providecommand{\PalavrasChaveArtigo}{}
+\newcommand{\PalavrasChave}[1]{\renewcommand{\PalavrasChaveArtigo}{#1}}
+
+\providecommand{\KeywordsArtigo}{}
+\newcommand{\Keywords}[1]{\renewcommand{\KeywordsArtigo}{#1}}
+
+\providecommand{\AreaArtigo}{}
+\newcommand{\AssuntodoArtigo}[1]{\renewcommand{\AreaArtigo}{#1}}
+
+\providecommand{\PACSArtigo}{}
+\newcommand{\PACS}[1]{\renewcommand{\PACSArtigo}{#1}}
+
+\providecommand{\DOIArtigo}{}
+\newcommand{\DOI}[1]{\renewcommand{\DOIArtigo}{#1}}
+
+\providecommand{\DatasArtigo}{}
+\newcommand{\Datas}[1]{\renewcommand{\DatasArtigo}{#1}}
+
+% EOF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

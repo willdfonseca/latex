@@ -1,0 +1,774 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Package for highlighting Numbers, Matlab, Fortran, Python, Latex and LabVIEW codes
+%% Prof. William D'Andrea Fonseca - rev. 01/12/2019
+%% willdfonseca@yahoo.com.br
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Referencing codes
+\newcommand{\code}[1]{Code~\ref{#1}\xspace}
+\newcommand{\Code}[1]{Code~\ref{#1}\xspace}
+\newcommand{\codes}[1]{Codes~\ref{#1}\xspace}
+\newcommand{\Codes}[1]{Codes~\ref{#1}\xspace}
+
+%% For Portuguese
+\newcommand{\codigo}[1]{Código~\ref{#1}\xspace}
+\newcommand{\Codigo}[1]{Código~\ref{#1}\xspace}
+\newcommand{\codigos}[1]{Códigos~\ref{#1}\xspace}
+\newcommand{\Codigos}[1]{Códigos~\ref{#1}\xspace}
+
+%%%%%%%%%%%%%% Escrever em Corrier New rapidamente %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\ttp}[1]{\fontfamily{ptm}\selectfont #1\normalfont} % Uso \ttp{}
+\newcommand{\ttsf}[1]{{\sffamily #1}}
+\newcommand{\tbs}{\textbackslash} % Barra invertida
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Base package behind this one
+\RequirePackage{listings}
+\RequirePackage{listingsutf8} 
+%\lstset{inputencoding=utf8/latin1}   %% for Latin1/ansinew coding
+%\lstset{inputencoding=utf8}
+
+\RequirePackage{textgreek}
+\DeclareUnicodeCharacter{03BF}{\textomikron}
+\DeclareUnicodeCharacter{039F}{\textOmikron}
+\DeclareUnicodeCharacter{03BC}{\textmugreek}
+
+%% Correct lists names %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\renewcommand*{\lstlistlistingname}{List of Codes} %% For english
+%\renewcommand*\lstlistingname{Code} %% For english
+\renewcommand*{\lstlistlistingname}{Lista de Códigos}
+\renewcommand*\lstlistingname{Código}
+%% Cria comando de lista
+\let\listadecodigos\lstlistoflistings\relax
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Espaçamento dos environments
+\lstset{aboveskip=0.6\baselineskip,
+        belowskip=1.1\baselineskip,
+	      abovecaptionskip=0.4\baselineskip,
+	      belowcaptionskip=6pt}
+				
+%%%%%%%%%%%%%% Input em codigos %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\inputcode}[4]{\lstinputlisting[style=#1, caption=#2, label=#3]{#4}}
+\newcommand{\inputcodeLatin}[4]{\lstinputlisting[style=#1, caption=#2, label=#3, inputencoding=latin1]{#4}}
+%\lstinputlisting[style=Fortran, caption=CylinderPnDLL.f90, label=CylinderPnDLL.f90]{Fortran/codes/CylinderPnDLL.f90}
+
+%%% Begin hack %%%
+%%% Ref. https://tex.stackexchange.com/questions/288936/listingsutf8s-option-inputencoding-utf8-latin1-leads-to-latin1-def-to-be-read-e
+\RequirePackage{catchfile}
+\let\SavedInputEncoding\inputencoding
+\renewcommand*{\inputencoding}{%
+  \let\TempSavedInput\input
+  \let\input\CachedInput
+  \SavedInputEncoding
+}
+\newcommand*{\CachedInput}[1]{%
+  \let\input\TempSavedInput
+  \ifcsname CachedInput@#1\endcsname
+  \else
+    \CatchFileDef\TempCachedInput{#1}{}%
+    \global\expandafter\let\csname CachedInput@#1\endcsname\TempCachedInput
+  \fi
+  \let\TempSavedEndinput\endinput
+  \let\endinput\relax
+  \csname CachedInput@#1\endcsname
+  \let\endinput\TempSavedEndinput
+}
+%%% End hack %%%
+
+%%%%%%%%%%%%%% Adicionar termos - REVER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newcommand{\inclword}[4]{\lstinputlisting[style=#1, caption=#2, label=#3]{#4}}
+
+% Load is absent %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Check if color command exists
+\ifx\color\undefined%
+  \RequirePackage{xcolor}%
+\fi
+
+% Check if textcomp has been loaded (this package is needed for
+% upright quotes '' (instead of typographic ones)...
+\ifx\textquotesingle\undefined% 
+  \RequirePackage{textcomp}%
+\fi
+
+% To use the symbols of arrows in the line breaks
+\ifx\rhookswarrow\undefined% 
+	\DeclareFontFamily{U} {MnSymbolA}{}
+	\DeclareFontShape{U}{MnSymbolA}{m}{n}{
+		<-6> MnSymbolA5
+		<6-7> MnSymbolA6
+		<7-8> MnSymbolA7
+		<8-9> MnSymbolA8
+		<9-10> MnSymbolA9
+		<10-12> MnSymbolA10
+		<12-> MnSymbolA12}{}
+	\DeclareFontShape{U}{MnSymbolA}{b}{n}{
+		<-6> MnSymbolA-Bold5
+		<6-7> MnSymbolA-Bold6
+		<7-8> MnSymbolA-Bold7
+		<8-9> MnSymbolA-Bold8
+		<9-10> MnSymbolA-Bold9
+		<10-12> MnSymbolA-Bold10
+		<12-> MnSymbolA-Bold12}{}
+	\DeclareSymbolFont{MnSyA} {U} {MnSymbolA}{m}{n}
+	\DeclareMathSymbol{\rhookswarrow}{\mathrel}{MnSyA}{62}
+	\DeclareMathSymbol{\rcurvearrowse}{\mathrel}{MnSyA}{199}
+\fi
+
+% For LabView image codes
+%\ifx\float\undefined \RequirePackage{float}\fi
+%\ifx\subfig\undefined \RequirePackage{subfig}\fi
+%\ifx\caption\undefined \RequirePackage{caption}\fi
+
+% For nice tables
+\RequirePackage{booktabs}
+% Color in the tables
+\RequirePackage{colortbl}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Default font
+%\def\lstbasicfont{\fontfamily{pcr}\selectfont\footnotesize}			% Basic font
+\def\lstbasicfont{\fontfamily{pcr}\fontsize{9}{10}\selectfont}		% Smaller basic font
+
+% default comment font %% To use inside Fortran or Matlab comment
+\def\commentfont{\color[rgb]{.133,.545,.133}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Frame border color 
+\definecolor{framecolor}{RGB}{226,215,255}	
+% Colors for tables
+\definecolor{dataclr}{RGB}{188,218,255}
+\definecolor{inputclr}{RGB}{188,255,202}
+\definecolor{outputclr}{RGB}{255,208,157}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% Configurations for Matlab
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lstdefinelanguage{WMatlab}{%
+  alsoletter={...},%
+  morekeywords={%																	% keywords
+  break,case,catch,continue,elseif,else,end,for,function,global,%
+  if,otherwise,persistent,return,latex,switch,try,while,...},%
+  comment=[l]\%,																	% comments
+  morecomment=[l]...,															% comments
+  morecomment=[s]{\%\{}{\%\}},										% block comments
+  morestring=[m]'																	% strings 
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lstdefinestyle{Matlab}
+	{language=WMatlab,															% use our version of highlighting
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	basicstyle=\lstbasicfont,                       % basic font 
+	showstringspaces=false,            % 
+	emph={ita_generate,fftd,syms,taylor}, emphstyle=\color{mblue}\bfseries,
+	 keywordstyle=\color[rgb]{0,0,1},						  	% keywords
+	 commentstyle=\commentfont,	 										% comments
+	 stringstyle=\color[rgb]{0.627,0.126,0.941},    % strings
+	 identifierstyle=\color{black},									% text
+	showstringspaces=false,													% do not emphasize spaces in strings
+	tabsize=4,																			% number of spaces of a TAB
+	upquote=true,																		% upright quotes
+	numbers=left,
+	aboveskip={0.05\baselineskip},									% space above
+	columns=fixed,																	% nice spacing
+	breaklines=true, 																												% For breaking lines
+	 prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\rhookswarrow}},					% For breaking lines
+	 postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\rcurvearrowse\space}},	% For breaking lines
+	 breakatwhitespace=false,																								% For breaking lines
+	% the following is for replacing some matlab relations like >= or ~=
+	% by the corresponding LaTeX symbols, which are much easier to read ...
+		literate=%
+			{~}{{$\neg$}}1 %               \neg
+			{<=}{{\tiny$\leq$}}1 %         \leq
+			{>=}{{\tiny$\geq$}}1 %         \geq
+			{~=}{{\tiny$\neq$}}1 %         \neq
+			{delta}{{\tiny$\Delta$}}1 %    \Delta
+			{(end)}{\lstbasicfont (end)}{5} % black ``end'' when indexing last vector element
+			{({ }end)}{\lstbasicfont ({ }end)}{6}
+			{(end{ })}{\lstbasicfont (end{ })}{6}
+			{({ }end{ })}{\lstbasicfont ({ }end{ })}{7}
+			{:end}{\lstbasicfont :end}{4}
+			{:{ }end}{\lstbasicfont :{ }end}{5}
+			{end:}{\lstbasicfont end:}{4}
+			{end{ }:}{\lstbasicfont end{ }:}{5}
+			{,end}{\lstbasicfont ,end}{4}
+			{,{ }end}{\lstbasicfont ,{ }end}{5}
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			%% Languages 
+				% Brazilian and portuguese
+				{é}{{\'{e}}}1 {ê}{{\^{e}}}1 {É}{{\'{E}}}1  {Ê}{{\^{E}}}1  {û}{{\^{u}}}1  {ù}{{\`{u}}}1  {â}{{\^{a}}}1  {à}{{\`{a}}}1  {á}{{\'{a}}}1  {ã}{{\~{a}}}1  {Á}{{\'{A}}}1
+        {Â}{{\^{A}}}1 {Ã}{{\~{A}}}1  {ç}{{\c{c}}}1 {Ç}{{\c{C}}}1  {õ}{{\~{o}}}1  {ó}{{\'{o}}}1  {ô}{{\^{o}}}1  {Õ}{{\~{O}}}1  {Ó}{{\'{O}}}1  {Ô}{{\^{O}}}1  {í}{{\'{i}}}1 {Í}{{\~{Í}}}1
+				% Spanish
+				{ü}{{\"u}}1 {Ü}{{\"U}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?``}}1 {¡}{{!``}}1
+				% French
+				{î}{{\^{i}}}1  {Î}{{\^{I}}}1 {è}{{\`{e}}}1 {È}{{\`{E}}}1 {ë}{{\"{e}}}1 {Ë}{{\"{E}}}1 {ù}{{\`{u}}}1 {Ù}{{\`{U}}}1
+				% German
+				{Ö}{{\"O}}1 {Ä}{{\"A}}1 {Ü}{{\"U}}1 {ß}{{\ss}}2 {ü}{{\"u}}1 {ä}{{\"a}}1 {ö}{{\"o}}1
+				% Hungarian
+				{ö}{{\"o}}1 {ő}{{\H o}}1 {ú}{{\'u}}1 {Ú}{{\'U}}1 {ü}{{\"u}}1 {ű}{{\H u}}1 {Ü}{{\"U}}1
+				% Czech
+				{ý}{{\'y}}1 {ě}{{\v{e}}}1 {š}{{\v{s}}}1 {č}{{\v{c}}}1 {ř}{{\v{r}}}1 {ž}{{\v{z}}}1 {ď}{{\v{d}}}1 {ť}{{\v{t}}}1 {ň}{{\v{n}}}1 {ů}{{\r{u}}}1 {Ý}{{\'Y}}1 {Ú}{{\'U}}1 {Ó}{{\'O}}1 {Ě}{{\v{E}}}1 {Š}{{\v{S}}}1
+        {Č}{{\v{C}}}1 {Ř}{{\v{R}}}1 {Ž}{{\v{Z}}}1 {Ď}{{\v{D}}}1 {Ť}{{\v{T}}}1 {Ň}{{\v{N}}}1 {Ů}{{\r{U}}}1
+				% Danish
+				{æ}{{\ae}}1 {å}{{\aa}}1 {ø}{{\o}}1 {Æ}{{\AE}}1 {Å}{{\AA}}1 {Ø}{{\O}}1 {œ}{{\oe}}1 {Œ}{{\OE}}1
+				% Turkish
+				{ğ}{{\u{g}}}1 {Ğ}{{\u{G}}}1 {ı}{{\i}}1 {İ}{{\.{I}}}1 {ş}{{\c{s}}}1 {Ş}{{\c{S}}}1
+				% Croatian
+				{ć}{{\'c}}1 {č}{{\v{c}}}1 {đ}{{\dj{}}}1 {š}{{\v{s}}}1 {ž}{{\v{z}}}1 {Ć}{{\'C}}1 {Č}{{\v{C}}}1 {Đ}{{\DJ{}}}1 {Š}{{\v{S}}}1 {Ž}{{\v{Z}}}1
+				% Lithuanian
+        {ą}{{\k{a}}}1 {č}{{\v{c}}}1 {ę}{{\k{e}}}1 {ė}{{\.{e}}}1 {į}{{\k{i}}}1 {š}{{\v{s}}}1 {ų}{{\k{u}}}1 {ū}{{\={u}}}1 {ž}{{\v{z}}}1 {Ą}{{\k{A}}}1
+				{Č}{{\v{C}}}1 {Ę}{{\k{E}}}1 {Ė}{{\.{E}}}1 {Į}{{\k{I}}}1 {Š}{{\v{S}}}1 {Ų}{{\k{U}}}1 {Ū}{{\={U}}}1 {Ž}{{\v{Z}}}1
+				% Greek
+				{α}{{\textalpha}}1 {β}{{\textbeta}}1 {γ}{{\textgamma}}1 {Γ}{{\textGamma}}1 {δ}{{\textdelta}}1 {Δ}{{\textDelta}}1 {ε}{{\textepsilon}}1
+        {ζ}{{\textzeta}}1 {η}{{\texteta}}1 {θ}{{\texttheta}}1 {Θ}{{\textTheta}}1 {ι}{{\textiota}}1 {κ}{{\textkappa}}1 {λ}{{\textlambda}}1 {Λ}{{\textLambda}}1
+        {μ}{{\textmugreek}}1 {ν}{{\textnu}}1 {ξ}{{\textxi}}1 {Ξ}{{\textXi}}1 {π}{{\textpi}}1 {Π}{{\textPi}}1 {ρ}{{\textrho}}1 {σ}{{\textsigma}}1
+				{Σ}{{\textSigma}}1 {ς}{{\textvarsigma}}1 {τ}{{\texttau}}1  {Τ}{{\textTau}}1 {υ}{{\textupsilon}}1 {φ}{{\textphi}}1 {Φ}{{\textPhi}}1
+        {χ}{{\textchi}}1 {ψ}{{\textpsi}}1 {Ψ}{{\textPsi}}1 {ω}{{\textomega}}1 {Ω}{{\textOmega}}1
+				% Other
+				{ì}{{\`{i}}}1 {Ì}{{\`{I}}}1 {ï}{{\"{i}}}1 {Ï}{{\"{I}}}1 {ò}{{\`{o}}}1 {Ò}{{\`{O}}}1 {€}{{\EUR}}1 {£}{{\pounds}}1
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% Enviroment
+\lstnewenvironment{matlabcode}[2][]
+{\lstset{style=Matlab, numbers=none, frame=single, rulecolor=\color{framecolor}, framesep=5pt, frameround=tttt, caption=#1, label={#2}}
+}
+{\vspace{-0.8\baselineskip}}
+%%%%%%% Box
+\lstnewenvironment{matlabbox}
+{\lstset{style=Matlab, numbers=none, frame=single, rulecolor=\color{framecolor}, framesep=5pt, frameround=tttt}
+\vspace{.7\baselineskip}
+}
+{}
+%%%%%%% Inline command
+\newcommand{\mcode}[1]{\lstinline[style=Matlab,basicstyle=\fontfamily{pcr}\selectfont\footnotesize,numbers=none]|#1|}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% Configurations for Fortran
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Colors for the emph
+\definecolor{Fblue}{RGB}{0,25,153}				% Fortran functions
+\definecolor{Fdred}{RGB}{83,0,0}			  	% Strings
+\definecolor{Fgreen}{rgb}{.133,.545,.133}	% Comments
+\definecolor{mblue}{RGB}{0,0,59}					% General math											
+\definecolor{dorag}{RGB}{180,75,0}				% Called functions
+\definecolor{lgreen}{RGB}{7,70,0}					% Local functions
+\definecolor{eblue}{RGB}{0,85,85}					% External functions
+\definecolor{byellow}{RGB}{250,100,0}			% Boolean functions, True, False
+\definecolor{pred}{RGB}{191,15,15}				% Parallelization related
+\definecolor{opurple}{RGB}{45,0,100}			% Other important
+\definecolor{fpink}{RGB}{228,2,140}				% DLL compiling related
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lstdefinelanguage{WFortran}[95]{Fortran}%
+  {morekeywords={ONLY, TRIM, AIMAG, MOD, nml},						% More Fortran keywords
+	 morestring=[d]{'}, 																		% String
+	 morecomment=[l]{!\ },																	% Comments
+	 morecomment=[l][\color{pred}\bfseries]{\!\$omp}, 			% To use OpenMP parallelization
+	 morecomment=[l][\color{fpink}]{\! DEC\$},							% DLL compiling related
+	 sensitive=false,
+	}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lstdefinestyle{Fortran}
+	{language=WFortran,
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%% Probably you want to add some functions here
+	%%%%%%%%%%%%%%%%%%%%%%%%
+	emph={sin,cos,abs,square,root,ci,exp,nint,int,cmplx},	% General math
+	emphstyle=\color{mblue}\bfseries,
+	%
+	emph={[2] pi\_d,arth,cbesmr,etime},										% Called functions
+	emphstyle={[2]\color{dorag}\bfseries},
+	%
+	emph={[3] besquot, num2str, numR2str, whichcores}, 		% Local functions
+	emphstyle={[3]\color{lgreen}\bfseries},
+	%
+	emph={[4] nrtype, nrutil, bessels},										% External functions
+	emphstyle={[4]\color{eblue}\bfseries},
+	%
+	emph={[5] true,false},																% Boolean functions, True, False
+	emphstyle={[5]\color{byellow}\bfseries},
+	%
+	emph={[6] section, NUM_THREADS, omp_get_thread_num, omp_get_num_procs, OMP_set_dynamic, omp_lib, parallel, shared, firstprivate},	% Parallelization related
+	emphstyle={[6]\color{pred}\bfseries},
+	%
+	emph={[7]  CylinderPn},																% Main program or subroutine
+	emphstyle={[7]\color{black}\bfseries},
+	%
+	emph={[8]  inputPn, MicGeo, error, uit},							% Other important
+	emphstyle={[8]\color{opurple}\bfseries},
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%% Configurations
+	basicstyle=\lstbasicfont,																							  % Basic font
+	 stringstyle=\color{Fdred}\ttfamily,																			% String style
+   keywordstyle=\color{Fblue}\bfseries, 																		% Keyword style
+   commentstyle=\commentfont, 																							% Comment style
+	 identifierstyle=\color{black},
+	columns=flexible,
+	linewidth=1.0\linewidth,
+	xleftmargin=0pt,
+	xrightmargin=1pt,
+   numbers=left,
+   numberstyle={\tiny},
+	upquote=true,																														% upright quotes
+	breaklines=true, 																												% For breaking lines
+	 prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\rhookswarrow}},					% For breaking lines
+	 postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\rcurvearrowse\space}},	% For breaking lines
+	 breakatwhitespace=false,																								% For breaking lines
+	showstringspaces=true,																									% Show space only in strings
+	aboveskip={0.025\baselineskip},			
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			%% Languages 
+			  literate=
+				% Brazilian and portuguese
+				{é}{{\'{e}}}1 {ê}{{\^{e}}}1 {É}{{\'{E}}}1  {Ê}{{\^{E}}}1  {û}{{\^{u}}}1  {ù}{{\`{u}}}1  {â}{{\^{a}}}1  {à}{{\`{a}}}1  {á}{{\'{a}}}1  {ã}{{\~{a}}}1  {Á}{{\'{A}}}1
+        {Â}{{\^{A}}}1 {Ã}{{\~{A}}}1  {ç}{{\c{c}}}1 {Ç}{{\c{C}}}1  {õ}{{\~{o}}}1  {ó}{{\'{o}}}1  {ô}{{\^{o}}}1  {Õ}{{\~{O}}}1  {Ó}{{\'{O}}}1  {Ô}{{\^{O}}}1  {í}{{\'{i}}}1 {Í}{{\~{Í}}}1
+				% Spanish
+				{ü}{{\"u}}1 {Ü}{{\"U}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?``}}1 {¡}{{!``}}1
+				% French
+				{î}{{\^{i}}}1  {Î}{{\^{I}}}1 {è}{{\`{e}}}1 {È}{{\`{E}}}1 {ë}{{\"{e}}}1 {Ë}{{\"{E}}}1 {ù}{{\`{u}}}1 {Ù}{{\`{U}}}1
+				% German
+				{Ö}{{\"O}}1 {Ä}{{\"A}}1 {Ü}{{\"U}}1 {ß}{{\ss}}2 {ü}{{\"u}}1 {ä}{{\"a}}1 {ö}{{\"o}}1
+				% Hungarian
+				{ö}{{\"o}}1 {ő}{{\H o}}1 {ú}{{\'u}}1 {Ú}{{\'U}}1 {ü}{{\"u}}1 {ű}{{\H u}}1 {Ü}{{\"U}}1
+				% Czech
+				{ý}{{\'y}}1 {ě}{{\v{e}}}1 {š}{{\v{s}}}1 {č}{{\v{c}}}1 {ř}{{\v{r}}}1 {ž}{{\v{z}}}1 {ď}{{\v{d}}}1 {ť}{{\v{t}}}1 {ň}{{\v{n}}}1 {ů}{{\r{u}}}1 {Ý}{{\'Y}}1 {Ú}{{\'U}}1 {Ó}{{\'O}}1 {Ě}{{\v{E}}}1 {Š}{{\v{S}}}1
+        {Č}{{\v{C}}}1 {Ř}{{\v{R}}}1 {Ž}{{\v{Z}}}1 {Ď}{{\v{D}}}1 {Ť}{{\v{T}}}1 {Ň}{{\v{N}}}1 {Ů}{{\r{U}}}1
+				% Danish
+				{æ}{{\ae}}1 {å}{{\aa}}1 {ø}{{\o}}1 {Æ}{{\AE}}1 {Å}{{\AA}}1 {Ø}{{\O}}1 {œ}{{\oe}}1 {Œ}{{\OE}}1
+				% Turkish
+				{ğ}{{\u{g}}}1 {Ğ}{{\u{G}}}1 {ı}{{\i}}1 {İ}{{\.{I}}}1 {ş}{{\c{s}}}1 {Ş}{{\c{S}}}1
+				% Croatian
+				{ć}{{\'c}}1 {č}{{\v{c}}}1 {đ}{{\dj{}}}1 {š}{{\v{s}}}1 {ž}{{\v{z}}}1 {Ć}{{\'C}}1 {Č}{{\v{C}}}1 {Đ}{{\DJ{}}}1 {Š}{{\v{S}}}1 {Ž}{{\v{Z}}}1
+				% Lithuanian
+        {ą}{{\k{a}}}1 {č}{{\v{c}}}1 {ę}{{\k{e}}}1 {ė}{{\.{e}}}1 {į}{{\k{i}}}1 {š}{{\v{s}}}1 {ų}{{\k{u}}}1 {ū}{{\={u}}}1 {ž}{{\v{z}}}1 {Ą}{{\k{A}}}1
+				{Č}{{\v{C}}}1 {Ę}{{\k{E}}}1 {Ė}{{\.{E}}}1 {Į}{{\k{I}}}1 {Š}{{\v{S}}}1 {Ų}{{\k{U}}}1 {Ū}{{\={U}}}1 {Ž}{{\v{Z}}}1
+				% Greek
+				{α}{{\textalpha}}1 {β}{{\textbeta}}1 {γ}{{\textgamma}}1 {Γ}{{\textGamma}}1 {δ}{{\textdelta}}1 {Δ}{{\textDelta}}1 {ε}{{\textepsilon}}1
+        {ζ}{{\textzeta}}1 {η}{{\texteta}}1 {θ}{{\texttheta}}1 {Θ}{{\textTheta}}1 {ι}{{\textiota}}1 {κ}{{\textkappa}}1 {λ}{{\textlambda}}1 {Λ}{{\textLambda}}1
+        {μ}{{\textmugreek}}1 {ν}{{\textnu}}1 {ξ}{{\textxi}}1 {Ξ}{{\textXi}}1 {π}{{\textpi}}1 {Π}{{\textPi}}1 {ρ}{{\textrho}}1 {σ}{{\textsigma}}1
+				{Σ}{{\textSigma}}1 {ς}{{\textvarsigma}}1 {τ}{{\texttau}}1  {Τ}{{\textTau}}1 {υ}{{\textupsilon}}1 {φ}{{\textphi}}1 {Φ}{{\textPhi}}1
+        {χ}{{\textchi}}1 {ψ}{{\textpsi}}1 {Ψ}{{\textPsi}}1 {ω}{{\textomega}}1 {Ω}{{\textOmega}}1
+				% Other
+				{ì}{{\`{i}}}1 {Ì}{{\`{I}}}1 {ï}{{\"{i}}}1 {Ï}{{\"{I}}}1 {ò}{{\`{o}}}1 {Ò}{{\`{O}}}1 {€}{{\EUR}}1 {£}{{\pounds}}1	
+} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% Enviroment
+\lstnewenvironment{fortrancode}[2][]
+{\lstset{style=Fortran, numbers=none, frame=single, rulecolor=\color{framecolor}, framesep=5pt, frameround=tttt, caption=#1, label={#2}}
+}
+{}
+%%%%%%% Box
+\lstnewenvironment{fortranbox}
+{\lstset{style=Fortran, numbers=none, frame=single, rulecolor=\color{framecolor}, framesep=5pt, frameround=tttt}
+\vspace{.7\baselineskip}
+}
+{}
+%%%%%%% Inline command
+\newcommand{\fcode}[1]{\lstinline[style=Fortran,basicstyle=\fontfamily{pcr}\selectfont\footnotesize,numbers=none]|#1|}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% Configurations for Latex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Colors
+\definecolor{llblue}{RGB}{165,127,217}
+\definecolor{lred}{RGB}{130,0,4}
+\definecolor{mathgreen}{RGB}{0,60,25}
+\definecolor{numpurple}{RGB}{95,10,190}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lstdefinelanguage{WLatex}[LaTeX]{TeX}%
+  {morekeywords={pdfinfo, author, title, shorttitle,shortauthor, pdfdate, page, backref},
+	 morecomment=[s][\color{mathgreen}]{\$}{\$}, ,	% Math mode in green
+	}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lstdefinestyle{Latex}
+	{language=WLatex,																% use our version of highlighting
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% Probably you want to add some functions here
+	%%%%%%%%%%%%%%%%%%%%%%%%
+	emph={xcolor, MnSymbol, textcomp, listings, Codes2Latex, float, subfigure, subfigura, subfiguras, sfign, figura, Fig, figuras, fign, secao, tabela, capitulo, pagina, equacao, equacoes, Eq, eqn, codigo, codigos, code, codes, vecbi, vv, vecl, vvc, vec, vecb, vbbi, txu, nonumber, quadro, globallabel, hl, hll, hlc, highlight},								
+	emphstyle=\color{mblue}\bfseries,								% Packages
+	%
+	emph={[2] commentfont},
+	emphstyle={[2]\color{mblue}},										% Commands
+	%
+	emph={[3] WMatlab, WFortran, WLatex, WLabview, nomeclpeq, nomecleq, nomeclp, nomecl, nomenclatura, nomecl_br_will, ttcCode},
+	emphstyle={[3]\color{lgreen}\bfseries},					% 
+	%
+	emph={[4] definecolor, RGB, rgb, textquotesingle, color, textcolor
+	lstdefinestyle, lstdefinelanguage, lstbasicfont, lstinline, lstname, emph, pcr, inputencoding, addbibresource},										
+	emphstyle={[4]\color[rgb]{0,0,1}},							% Packages commands
+	%
+	emph={[5] fcode, fortrancode, fortranbox, mcode, matlabcode, matlabbox, 
+	lcode, latexcode, latexbox, ttc, ttcb, ttccode, ttcbox, 
+	lbcode, fmtnum, inputcode, inputcodeLatin},
+	emphstyle={[5]\color{mblue}\bfseries},					% New commands
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%% Configurations
+	basicstyle=\lstbasicfont,                      % use font and smaller size
+	 keywordstyle=\color{blue},									  	% keywords
+	 commentstyle=\color{gray!95}\itshape,					% comments
+	 stringstyle=\color[rgb]{0.627,0.126,0.941},    % strings
+	 identifierstyle=\color{black},
+ 	showstringspaces=false,													% do not emphasize spaces in strings
+	tabsize=2,																			% number of spaces of a TAB
+	upquote=true,																		% upright quotes
+	aboveskip={0.05\baselineskip},									% space above
+	columns=flexible,																% nice spacing
+	numbers=left,
+  numberstyle={\tiny},
+	upquote=true,										  							% upright quotes
+	breaklines=true, 																										  	% For breaking lines
+	 prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\rhookswarrow}},					% For breaking lines
+	 postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\rcurvearrowse\space}},	% For breaking lines
+	 breakatwhitespace=false,																								% For breaking lines
+  backgroundcolor=,%
+	%%%%%%%
+   texcsstyle=*\color{blue}\bfseries,%
+	%%%%%%% Add LaTeX standard commands here
+   texcs={end,begin,documentclass, graphicspath, def, fi, ifx,
+	 RequirePackage, undefined, ifx, fi, baselineskip, def, fontfamily, selectfont, footnotesize, fontsize, RequirePackage, ProvidesPackage,
+	 bfseries, ttfamily, ensuremath, baselineskip, raisebox, itshape, tiny, newcommand, linewidth, usepackage, makenomenclature,
+	 bibliographystyle, bibliography, label, subfloat, mbox, colorbox, caption, centering, quad, qquad, includegraphics, cite, citet, renewcommand, input, index
+	 },%
+	%%%%%%%
+        literate=
+				 {= }{\textcolor{lred}{=}}1
+			   {\{ }{\textcolor{llblue}{\{}}1
+         {\}}{\textcolor{llblue}{\}}}1
+         {[}{\textcolor{lred}{[}}1     
+         {]}{\textcolor{lred}{]}}1
+				 %{\textbackslash{}\%}{\textcolor{black}{\%}}2
+				     {0}{\textcolor{numpurple}{0}}{1}%
+             {1}{\textcolor{numpurple}{1}}{1}%
+             {2}{\textcolor{numpurple}{2}}{1}%
+             {3}{\textcolor{numpurple}{3}}{1}%
+             {4}{\textcolor{numpurple}{4}}{1}%
+             {5}{\textcolor{numpurple}{5}}{1}%
+             {6}{\textcolor{numpurple}{6}}{1}%
+             {7}{\textcolor{numpurple}{7}}{1}%
+             {8}{\textcolor{numpurple}{8}}{1}%
+             {9}{\textcolor{numpurple}{9}}{1}%
+             {.0}{\textcolor{numpurple}{.0}}{1}% Following is to ensure that only periods
+             {.1}{\textcolor{numpurple}{.1}}{1}% followed by a digit are changed.
+             {.2}{\textcolor{numpurple}{.2}}{1}%
+             {.3}{\textcolor{numpurple}{.3}}{1}%
+             {.4}{\textcolor{numpurple}{.4}}{1}%
+             {.5}{\textcolor{numpurple}{.5}}{1}%
+             {.6}{\textcolor{numpurple}{.6}}{1}%
+             {.7}{\textcolor{numpurple}{.7}}{1}%
+             {.8}{\textcolor{numpurple}{.8}}{1}%
+             {.9}{\textcolor{numpurple}{.9}}{1}%
+             %{,}{\textcolor{numpurple},}{1}% depends if you want the "," in color
+             {\ }{ }{1}% handle the space
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			%% Languages 
+				% Brazilian and portuguese
+				{é}{{\'{e}}}1 {ê}{{\^{e}}}1 {É}{{\'{E}}}1  {Ê}{{\^{E}}}1  {û}{{\^{u}}}1  {ù}{{\`{u}}}1  {â}{{\^{a}}}1  {à}{{\`{a}}}1  {á}{{\'{a}}}1  {ã}{{\~{a}}}1  {Á}{{\'{A}}}1
+        {Â}{{\^{A}}}1 {Ã}{{\~{A}}}1  {ç}{{\c{c}}}1 {Ç}{{\c{C}}}1  {õ}{{\~{o}}}1  {ó}{{\'{o}}}1  {ô}{{\^{o}}}1  {Õ}{{\~{O}}}1  {Ó}{{\'{O}}}1  {Ô}{{\^{O}}}1  {í}{{\'{i}}}1 {Í}{{\~{Í}}}1
+				% Spanish
+				{ü}{{\"u}}1 {Ü}{{\"U}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?``}}1 {¡}{{!``}}1
+				% French
+				{î}{{\^{i}}}1  {Î}{{\^{I}}}1 {è}{{\`{e}}}1 {È}{{\`{E}}}1 {ë}{{\"{e}}}1 {Ë}{{\"{E}}}1 {ù}{{\`{u}}}1 {Ù}{{\`{U}}}1
+				% German
+				{Ö}{{\"O}}1 {Ä}{{\"A}}1 {Ü}{{\"U}}1 {ß}{{\ss}}2 {ü}{{\"u}}1 {ä}{{\"a}}1 {ö}{{\"o}}1
+				% Hungarian
+				{ö}{{\"o}}1 {ő}{{\H o}}1 {ú}{{\'u}}1 {Ú}{{\'U}}1 {ü}{{\"u}}1 {ű}{{\H u}}1 {Ü}{{\"U}}1
+				% Czech
+				{ý}{{\'y}}1 {ě}{{\v{e}}}1 {š}{{\v{s}}}1 {č}{{\v{c}}}1 {ř}{{\v{r}}}1 {ž}{{\v{z}}}1 {ď}{{\v{d}}}1 {ť}{{\v{t}}}1 {ň}{{\v{n}}}1 {ů}{{\r{u}}}1 {Ý}{{\'Y}}1 {Ú}{{\'U}}1 {Ó}{{\'O}}1 {Ě}{{\v{E}}}1 {Š}{{\v{S}}}1
+        {Č}{{\v{C}}}1 {Ř}{{\v{R}}}1 {Ž}{{\v{Z}}}1 {Ď}{{\v{D}}}1 {Ť}{{\v{T}}}1 {Ň}{{\v{N}}}1 {Ů}{{\r{U}}}1
+				% Danish
+				{æ}{{\ae}}1 {å}{{\aa}}1 {ø}{{\o}}1 {Æ}{{\AE}}1 {Å}{{\AA}}1 {Ø}{{\O}}1 {œ}{{\oe}}1 {Œ}{{\OE}}1
+				% Turkish
+				{ğ}{{\u{g}}}1 {Ğ}{{\u{G}}}1 {ı}{{\i}}1 {İ}{{\.{I}}}1 {ş}{{\c{s}}}1 {Ş}{{\c{S}}}1
+				% Croatian
+				{ć}{{\'c}}1 {č}{{\v{c}}}1 {đ}{{\dj{}}}1 {š}{{\v{s}}}1 {ž}{{\v{z}}}1 {Ć}{{\'C}}1 {Č}{{\v{C}}}1 {Đ}{{\DJ{}}}1 {Š}{{\v{S}}}1 {Ž}{{\v{Z}}}1
+				% Lithuanian
+        {ą}{{\k{a}}}1 {č}{{\v{c}}}1 {ę}{{\k{e}}}1 {ė}{{\.{e}}}1 {į}{{\k{i}}}1 {š}{{\v{s}}}1 {ų}{{\k{u}}}1 {ū}{{\={u}}}1 {ž}{{\v{z}}}1 {Ą}{{\k{A}}}1
+				{Č}{{\v{C}}}1 {Ę}{{\k{E}}}1 {Ė}{{\.{E}}}1 {Į}{{\k{I}}}1 {Š}{{\v{S}}}1 {Ų}{{\k{U}}}1 {Ū}{{\={U}}}1 {Ž}{{\v{Z}}}1
+				% Greek
+				{α}{{\textalpha}}1 {β}{{\textbeta}}1 {γ}{{\textgamma}}1 {Γ}{{\textGamma}}1 {δ}{{\textdelta}}1 {Δ}{{\textDelta}}1 {ε}{{\textepsilon}}1
+        {ζ}{{\textzeta}}1 {η}{{\texteta}}1 {θ}{{\texttheta}}1 {Θ}{{\textTheta}}1 {ι}{{\textiota}}1 {κ}{{\textkappa}}1 {λ}{{\textlambda}}1 {Λ}{{\textLambda}}1
+        {μ}{{\textmugreek}}1 {ν}{{\textnu}}1 {ξ}{{\textxi}}1 {Ξ}{{\textXi}}1 {π}{{\textpi}}1 {Π}{{\textPi}}1 {ρ}{{\textrho}}1 {σ}{{\textsigma}}1
+				{Σ}{{\textSigma}}1 {ς}{{\textvarsigma}}1 {τ}{{\texttau}}1  {Τ}{{\textTau}}1 {υ}{{\textupsilon}}1 {φ}{{\textphi}}1 {Φ}{{\textPhi}}1
+        {χ}{{\textchi}}1 {ψ}{{\textpsi}}1 {Ψ}{{\textPsi}}1 {ω}{{\textomega}}1 {Ω}{{\textOmega}}1
+				% Other
+				{ì}{{\`{i}}}1 {Ì}{{\`{I}}}1 {ï}{{\"{i}}}1 {Ï}{{\"{I}}}1 {ò}{{\`{o}}}1 {Ò}{{\`{O}}}1 {€}{{\EUR}}1 {£}{{\pounds}}1
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% fillcolor=\color[RGB]{235,228,255}
+%%%%%%% Enviroment
+\lstnewenvironment{latexcode}[2][]
+{
+\lstset{style=Latex, numbers=none, frame=single, rulecolor=\color{framecolor}, framesep=5pt, frameround=tttt, caption={#1}, label={#2}}
+}
+{}
+%%%%%%% Enviroment
+\lstnewenvironment{latexbox}
+{
+\lstset{style=Latex, numbers=none, frame=single, rulecolor=\color{framecolor}, framesep=5pt, frameround=tttt}
+\vspace{.7\baselineskip}
+}
+{}
+%%%%%%% Inline command
+\newcommand{\lcode}[1]{\lstinline[style=Latex,basicstyle=\fontfamily{pcr}\selectfont\footnotesize,numbers=none]{#1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% Configurations for Numbers
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Colors
+\definecolor{numblue}{RGB}{27,64,203}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lstdefinestyle{fmtnumb}{%
+    literate={0}{\textcolor{numblue}{0}}{1}%
+             {1}{\textcolor{numblue}{1}}{1}%
+             {2}{\textcolor{numblue}{2}}{1}%
+             {3}{\textcolor{numblue}{3}}{1}%
+             {4}{\textcolor{numblue}{4}}{1}%
+             {5}{\textcolor{numblue}{5}}{1}%
+             {6}{\textcolor{numblue}{6}}{1}%
+             {7}{\textcolor{numblue}{7}}{1}%
+             {8}{\textcolor{numblue}{8}}{1}%
+             {9}{\textcolor{numblue}{9}}{1}%
+             {.0}{\textcolor{numblue}{.0}}{1}% Following is to ensure that only periods
+             {.1}{\textcolor{numblue}{.1}}{1}% followed by a digit are changed.
+             {.2}{\textcolor{numblue}{.2}}{1}%
+             {.3}{\textcolor{numblue}{.3}}{1}%
+             {.4}{\textcolor{numblue}{.4}}{1}%
+             {.5}{\textcolor{numblue}{.5}}{1}%
+             {.6}{\textcolor{numblue}{.6}}{1}%
+             {.7}{\textcolor{numblue}{.7}}{1}%
+             {.8}{\textcolor{numblue}{.8}}{1}%
+             {.9}{\textcolor{numblue}{.9}}{1}%
+             %{,}{\textcolor{numblue},}{1}% depends if you want the "," in color
+             {\ }{ }{1}% handle the space
+}
+%%%%%%% Inline command
+\newcommand{\fmtnum}[1]{\lstinline[style=fmtnumb]{#1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% Configurations for ttcCode
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lstdefinelanguage{ttcCode}{%
+  alsoletter={\\,...},%
+  morekeywords={%																  	% keywords
+  date, time},%
+  comment=$$,     																	% comments
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lstdefinestyle{ttcCode}
+	{											
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	  basicstyle=\ttfamily,
+		frame=single,
+    numbers=none,
+    backgroundcolor=\color{lightgray!15},
+    rulecolor=\color{framecolor}, 
+		framesep=5pt, 
+		frameround=tttt, 
+		breaklines=true, 																										      	% For breaking lines
+	      prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\rhookswarrow}},					% For breaking lines
+	      postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\rcurvearrowse\space}},	% For breaking lines
+	      breakatwhitespace=false,	
+ 	showstringspaces=false,													% do not emphasize spaces in strings
+	tabsize=2,																			% number of spaces of a TAB
+	upquote=true,																		% upright quotes
+	aboveskip={0.05\baselineskip},									% space above
+	columns=flexible,																% nice spacing
+	numbers=left,
+  numberstyle={\tiny},
+	upquote=true,
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			%% Languages 
+			  literate=
+				% Brazilian and portuguese
+				{é}{{\'{e}}}1 {ê}{{\^{e}}}1 {É}{{\'{E}}}1  {Ê}{{\^{E}}}1  {û}{{\^{u}}}1  {ù}{{\`{u}}}1  {â}{{\^{a}}}1  {à}{{\`{a}}}1  {á}{{\'{a}}}1  {ã}{{\~{a}}}1  {Á}{{\'{A}}}1
+        {Â}{{\^{A}}}1 {Ã}{{\~{A}}}1  {ç}{{\c{c}}}1 {Ç}{{\c{C}}}1  {õ}{{\~{o}}}1  {ó}{{\'{o}}}1  {ô}{{\^{o}}}1  {Õ}{{\~{O}}}1  {Ó}{{\'{O}}}1  {Ô}{{\^{O}}}1  {í}{{\'{i}}}1 {Í}{{\~{Í}}}1
+				% Spanish
+				{ü}{{\"u}}1 {Ü}{{\"U}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?``}}1 {¡}{{!``}}1
+				% French
+				{î}{{\^{i}}}1  {Î}{{\^{I}}}1 {è}{{\`{e}}}1 {È}{{\`{E}}}1 {ë}{{\"{e}}}1 {Ë}{{\"{E}}}1 {ù}{{\`{u}}}1 {Ù}{{\`{U}}}1
+				% German
+				{Ö}{{\"O}}1 {Ä}{{\"A}}1 {Ü}{{\"U}}1 {ß}{{\ss}}2 {ü}{{\"u}}1 {ä}{{\"a}}1 {ö}{{\"o}}1
+				% Hungarian
+				{ö}{{\"o}}1 {ő}{{\H o}}1 {ú}{{\'u}}1 {Ú}{{\'U}}1 {ü}{{\"u}}1 {ű}{{\H u}}1 {Ü}{{\"U}}1
+				% Czech
+				{ý}{{\'y}}1 {ě}{{\v{e}}}1 {š}{{\v{s}}}1 {č}{{\v{c}}}1 {ř}{{\v{r}}}1 {ž}{{\v{z}}}1 {ď}{{\v{d}}}1 {ť}{{\v{t}}}1 {ň}{{\v{n}}}1 {ů}{{\r{u}}}1 {Ý}{{\'Y}}1 {Ú}{{\'U}}1 {Ó}{{\'O}}1 {Ě}{{\v{E}}}1 {Š}{{\v{S}}}1
+        {Č}{{\v{C}}}1 {Ř}{{\v{R}}}1 {Ž}{{\v{Z}}}1 {Ď}{{\v{D}}}1 {Ť}{{\v{T}}}1 {Ň}{{\v{N}}}1 {Ů}{{\r{U}}}1
+				% Danish
+				{æ}{{\ae}}1 {å}{{\aa}}1 {ø}{{\o}}1 {Æ}{{\AE}}1 {Å}{{\AA}}1 {Ø}{{\O}}1 {œ}{{\oe}}1 {Œ}{{\OE}}1
+				% Turkish
+				{ğ}{{\u{g}}}1 {Ğ}{{\u{G}}}1 {ı}{{\i}}1 {İ}{{\.{I}}}1 {ş}{{\c{s}}}1 {Ş}{{\c{S}}}1
+				% Croatian
+				{ć}{{\'c}}1 {č}{{\v{c}}}1 {đ}{{\dj{}}}1 {š}{{\v{s}}}1 {ž}{{\v{z}}}1 {Ć}{{\'C}}1 {Č}{{\v{C}}}1 {Đ}{{\DJ{}}}1 {Š}{{\v{S}}}1 {Ž}{{\v{Z}}}1
+				% Lithuanian
+        {ą}{{\k{a}}}1 {č}{{\v{c}}}1 {ę}{{\k{e}}}1 {ė}{{\.{e}}}1 {į}{{\k{i}}}1 {š}{{\v{s}}}1 {ų}{{\k{u}}}1 {ū}{{\={u}}}1 {ž}{{\v{z}}}1 {Ą}{{\k{A}}}1
+				{Č}{{\v{C}}}1 {Ę}{{\k{E}}}1 {Ė}{{\.{E}}}1 {Į}{{\k{I}}}1 {Š}{{\v{S}}}1 {Ų}{{\k{U}}}1 {Ū}{{\={U}}}1 {Ž}{{\v{Z}}}1
+				% Greek
+				{α}{{\textalpha}}1 {β}{{\textbeta}}1 {γ}{{\textgamma}}1 {Γ}{{\textGamma}}1 {δ}{{\textdelta}}1 {Δ}{{\textDelta}}1 {ε}{{\textepsilon}}1
+        {ζ}{{\textzeta}}1 {η}{{\texteta}}1 {θ}{{\texttheta}}1 {Θ}{{\textTheta}}1 {ι}{{\textiota}}1 {κ}{{\textkappa}}1 {λ}{{\textlambda}}1 {Λ}{{\textLambda}}1
+        {μ}{{\textmugreek}}1 {ν}{{\textnu}}1 {ξ}{{\textxi}}1 {Ξ}{{\textXi}}1 {π}{{\textpi}}1 {Π}{{\textPi}}1 {ρ}{{\textrho}}1 {σ}{{\textsigma}}1
+				{Σ}{{\textSigma}}1 {ς}{{\textvarsigma}}1 {τ}{{\texttau}}1  {Τ}{{\textTau}}1 {υ}{{\textupsilon}}1 {φ}{{\textphi}}1 {Φ}{{\textPhi}}1
+        {χ}{{\textchi}}1 {ψ}{{\textpsi}}1 {Ψ}{{\textPsi}}1 {ω}{{\textomega}}1 {Ω}{{\textOmega}}1
+				% Other
+				{ì}{{\`{i}}}1 {Ì}{{\`{I}}}1 {ï}{{\"{i}}}1 {Ï}{{\"{I}}}1 {ò}{{\`{o}}}1 {Ò}{{\`{O}}}1 {€}{{\EUR}}1 {£}{{\pounds}}1	
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% Enviroment
+\lstnewenvironment{ttccode}[3][\@]
+{\lstset{style=ttcCode, caption={#1}, label={#2}, escapechar={#3}}
+}
+{}
+%%%%%%% Box
+\lstnewenvironment{ttccodebox}
+{\lstset{style=ttcCode}
+\vspace{.7\baselineskip}
+}
+{}
+%%%%%%% Inline command
+\newcommand{\ttc}[1]{\lstinline[style=ttcCode,backgroundcolor=]{#1}} % Uso \ttc{}
+\newcommand{\ttcb}[1]{\ttfamily #1\normalfont} % Uso \ttcb{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% Configurations for Labview
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Labview Colors
+\definecolor{lvblue}{RGB}{0,0,255} \definecolor{lvorange}{RGB}{255,102,0}
+\definecolor{lvstring}{RGB}{255,0,255} \definecolor{lvgreen}{RGB}{8,120,8}
+\definecolor{lvpath}{RGB}{0,102,102}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lstdefinelanguage{WLabview}%
+  {morekeywords={},
+	 basicstyle=\lstbasicfont,																							  % Basic font
+	columns=flexible,
+	abovecaptionskip=0.2cm,
+	belowcaptionskip=0.6cm,
+	linewidth=1.0\linewidth,
+	xleftmargin=0pt,
+	xrightmargin=0pt,
+  numbers=none,
+	showstringspaces=true,			
+	aboveskip={0.025\baselineskip},			
+	}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% Enviroments
+%%%%%%%%%%%%%%%%%%%%%%%%%% Labview Code
+\lstnewenvironment{labviewcode}[2][]
+{
+\lstset{language=WLabview, caption=#1, label={#2}}
+\begin{figure}[H]
+}
+{
+\end{figure}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%% Labview Pane
+\lstnewenvironment{labviewpane}[2][]
+{
+\lstset{language=WLabview, caption=#1 Connection Pane, label={#2}}
+\begin{figure}[H]
+}
+{
+\end{figure}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%% Labview Front Panel
+\lstnewenvironment{labviewfront}[2][]
+{
+\lstset{language=WLabview, caption=#1 Front Panel, label={#2}}
+\begin{figure}[H]
+}
+{
+\end{figure}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%% Labview Pane + Code
+\lstnewenvironment{labviewfull}[2][]
+{
+\lstset{language=WLabview, caption={#1}, label={#2}}
+\setcounter{subfigure}{0}
+\begin{figure}[H]
+}
+{
+%\caption{}
+\end{figure}
+}
+
+%%%%%%% Inline data type commands
+%%% Text with Data Type color
+\newcommand{\lbcode}[2]{\textcolor{#1}{#2}}
+\newcommand{\lbimg}[1]{\raisebox{-.2ex}{\mbox{\includegraphics[height=13px,page=#1]{Codes2Latex.pdf}}}\xspace} 
+%%% Numeric Data Types
+\newcommand{\lbdbl}{\raisebox{-.2ex}{\mbox{\includegraphics[height=13px]{Codes2LatexAux/cdbl.png}}}\xspace}
+\newcommand{\lbci}{\raisebox{-.2ex}{\mbox{\includegraphics[height=13px]{Codes2LatexAux/ci32.png}}}\xspace}
+%%% String Data Type
+\newcommand{\lbstring}{\raisebox{-.2ex}{\mbox{\includegraphics[height=13px]{Codes2LatexAux/string_data_type.png}}}\xspace}
+%%% Boolean Data Type
+\newcommand{\lbboo}{\raisebox{-.2ex}{\mbox{\includegraphics[height=13px]{Codes2LatexAux/boolean_data_type.png}}}\xspace}
+%%% Path Data Type
+\newcommand{\lbpath}{\raisebox{-.2ex}{\mbox{\includegraphics[height=13px]{Codes2LatexAux/cpath.png}}}\xspace}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% Configurations for Python
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{11} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{11}  % for normal
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lstdefinestyle{Python}
+{language=Python,
+basicstyle=\ttm,
+otherkeywords={self},             % Add keywords here
+keywordstyle=\ttb\color{deepblue},
+emph={MyClass,__init__},          % Custom highlighting
+emphstyle=\ttb\color{deepred},    % Custom highlighting style
+stringstyle=\color{deepgreen},
+frame=tb,                         % Any extra options here
+showstringspaces=false,            % 
+	emph={chirp,numpy,scipy,scipy.signal,signal,matplotlib,sounddevice},	% General math
+	emphstyle=\ttb,
+	emph={[2] generate, sweep, playrec,generate, sweep,measurement,run,plot_freq,plot_time,list_devices, default, properties, functions, classes, pip, install},										% Called functions
+	emphstyle={[2]\ttb},
+	emph={[3] pytta},										% Called functions
+	emphstyle={[3]\ttb\color{deepred}},		
+	emph={[4] ChannelObj, SignalObj, ImpulsiveResponse, RecMeasure, PlayRecMeasure, FRFMeasure},										% Called functions
+	emphstyle={[4]\ttb\color{nicebl}},		
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% Enviroment
+\lstnewenvironment{pythoncode}[2][]
+{\lstset{style=Python, numbers=none, frame=single, rulecolor=\color{framecolor}, framesep=5pt, frameround=tttt, caption=#1, label={#2}}
+}
+{}
+%%%%%%% Box
+\lstnewenvironment{pythonbox}
+{\lstset{style=Python, numbers=none, frame=single, rulecolor=\color{framecolor}, framesep=5pt, frameround=tttt}
+\vspace{.7\baselineskip}
+}
+{}
+%%%%%%% Inline command
+\newcommand{\pycode}[1]{\lstinline[style=Python,basicstyle=\fontfamily{pcr}\selectfont\footnotesize,numbers=none]|#1|}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% one can use \ContinuedFloat for continuing the subfloat count
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lstset{
+			mathescape=false,																										% To use $ in the code
+			escapechar={\@*},	    																							% escape to latex with
+			escapeinside={\%*}{*)}                        % example: %*\newline*)
+			}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Additional info
+%% http://stackoverflow.com/questions/1116266/listings-in-latex-with-utf-8-or-at-least-german-umlauts
+%% http://tex.stackexchange.com/questions/288936/listingsutf8s-option-inputencoding-utf8-latin1-leads-to-latin1-def-to-be-read-e
+%% http://tex.stackexchange.com/questions/122850/how-to-insert-a-keyword-with-accents-extendedchars-in-listings
+% EOF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
