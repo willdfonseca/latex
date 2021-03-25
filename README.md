@@ -15,3 +15,20 @@ The congress official LaTeX templates (Portuguese, Spanish, and English) are sim
 - Spanish version: WIP [**work in progress**]
 
 Ms. Word templates are also being constructed and soon will be also available.
+
+##
+### Other templates
+
+##   :sound: Unofficial Internoise 2021 (improved) Template
+Internoise 2021 is the 50th International Congress and Exposition on Noise Control Engineering. The conference will be virtual due to the world pandemic situation. The official website is https://internoise2021.org.
+
+Starting from the official LaTeX template ([here](https://internoise2021.org/author-information/)), the (unofficial) improved version [in the repository] was created. Improvements:
+
+ - Typos were correctect;
+ - Metadata capable;
+ - Logo with high quality;
+ - Natbib to manage references;
+ - Organization of the tex files; and
+ - Other minor corrections.
+
+ Find the template HERE. :ocean:
