@@ -1,0 +1,114 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Template LaTeX for Internoise 2020
+% Unofficial improved version by Prof. Will D'Andrea Fonseca
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx, times} % W
+\usepackage{geometry}
+\geometry{top=20mm,bottom=20mm,left=20mm,right=20mm}
+
+\pagestyle{empty}
+
+\usepackage{titlesec}
+\setcounter{secnumdepth}{4} % how many sectioning levels to assign numbers to
+\titleformat{\section}
+{\bfseries\uppercase}{\thesection.}{1em}{}
+
+\titleformat{\subsection}
+{\bfseries}{\thesubsection.}{1em}{}
+
+\titleformat{\subsubsection}
+{\bfseries}{\thesubsubsection.}{1em}{}
+
+\renewcommand{\labelitemi}{\textendash}
+\renewcommand{\labelitemii}{\textendash}
+
+\usepackage[table,xcdraw,dvipsnames]{xcolor}
+\usepackage{graphicx} % used to insert the figure
+\usepackage{subfig}  % used to insert the subfigure as subfloat
+\usepackage{multirow, makecell} % used for the table
+\usepackage[font=it, justification=centering]{caption}
+%\usepackage{cite}
+%\usepackage{breakurl}
+\usepackage{indentfirst}
+\usepackage{amsmath, amssymb, amsfonts, bm}
+\usepackage{txfonts}
+\usepackage{enumitem}
+\usepackage{float, xspace}
+\usepackage{soul, soulutf8}
+\usepackage{upgreek} % upgreek
+
+\hyphenpenalty=10000
+\setlength{\emergencystretch}{3em}
+\columnsep 1cm
+\setlength{\parindent}{0.5cm}
+\titlespacing*{\subsection}{0pt}{1.5em}{0.2em}
+\titlespacing*{\subsubsection}{0pt}{1.5em}{0.2em}
+
+\renewcommand\eqref[1]{Equation~\ref{#1}}
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
+
+\renewcommand{\refname}{6. \hspace{3mm} References} 
+\setlength{\footnotesep}{12pt}
+
+\usepackage{animate}
+\usepackage[square,sort&compress,comma,numbers]{natbib} % The natbib package sorts the numbers and detects consecutive sequences, so creating “[2–4,6]”.
+
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,anchorcolor=black,urlcolor=blue,filecolor=blue,runcolor=blue]{hyperref} % W
+\usepackage{url,xurl} % W
+\urlstyle{same}
+\usepackage{bookmark}
+
+%\usepackage{attachfile}
+%\usepackage[addedmarkup=colored]{changes}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New stuff added by Will
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Check if the compilation is a PDF
+\usepackage{iftex}    
+\ifpdf \input{glyphtounicode} \pdfminorversion=7 \pdfimageresolution=300 
+\pdfgentounicode=1\fi 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Typography and hyphenation
+\usepackage[final,kerning=true,spacing=true]{microtype}
+\widowpenalty=1000 \clubpenalty=1000 \tolerance=3000
+\microtypecontext{spacing=nonfrench}
+%%% Table stuff %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{multirow}
+\usepackage{booktabs,colortbl}
+\usepackage{threeparttable}
+\newcommand{\ratb}[1]{\renewcommand{\arraystretch}{#1}}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{V}{>{\centering\arraybackslash} m{.4\linewidth} }
+\newcolumntype{A}[2]{%
+    >{\minipage{\dimexpr#1\linewidth-2\tabcolsep-#2\arrayrulewidth\relax}\vspace\tabcolsep}%
+    c<{\vspace\tabcolsep\endminipage}}
+
+\newcommand{\mymulticolumn}[3]{\multicolumn{#1}{>{\columncolor{\RowColorName}}#2}{#3}}
+\newcommand{\SetRowColor}[1]{\noalign{\gdef\RowColorName{#1}}\rowcolor{\RowColorName}}
+%% Some colors
+\definecolor{framecolor}{RGB}{226,215,255}	
+\definecolor{toptb}{RGB}{221,239,255}
+\definecolor{lighttb}{RGB}{255,247,221}
+\definecolor{lightlinetb}{RGB}{208,239,255}
+\definecolor{purple}{RGB}{112,48,160}
+\definecolor{gold}{RGB}{255,192,0}
+\definecolor{LightGreen}{RGB}{235,255,251}
+\definecolor{LightRed}{RGB}{255,237,237}
+\definecolor{LightOrange}{RGB}{255,250,237}
+\definecolor{LightOrange2}{RGB}{255,235,193}
+\definecolor{Green02}{rgb}{0,0.5,0}
+\definecolor{Orange02}{rgb}{1,0.6,0.2}
+\definecolor{LightBlue}{RGB}{212,237,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand*{\doi}[1]{doi:\href{http://dx.doi.org/#1}{ #1}}
+\newcommand*{\vph}[1]{\vphantom{\rule{2pt}{#1}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% EOF
