@@ -31,4 +31,4 @@ Starting from the official LaTeX template ([here](https://internoise2021.org/aut
  - Organization of the tex files; and
  - Other minor corrections.
 
- Find the template HERE. :ocean:
+ Find the template [HERE](https://github.com/willdfonseca/latex/tree/main/Internoise/2021). :ocean: Or also available in [Overleaf](http://bit.ly/int-2021-template).
