@@ -7,10 +7,10 @@ FIA 2020 is the **12th  Ibero-American Acoustics Congress** integrating with **X
 Per the website at:
  - https://fia2020.com.br/
 
-The congress official LaTeX templates (Portuguese, Spanish, and English) are simutaneously hosted in [Overleaf](https://www.overleaf.com/), GitHub, and [FIA 2020 Website](https://fia2020.com.br/).    
+The congress official LaTeX templates (Portuguese, Spanish, and English) are simutaneously hosted in [Overleaf](https://www.overleaf.com/), [GitHub](https://github.com/willdfonseca/latex/tree/main/FIA%202020), and [FIA 2020 Website](https://fia2020.com.br/).    
 
 
- - Portuguese version: [Overleaf](https://www.overleaf.com/read/rnfjxkknksnd) and GitHub.
+ - Portuguese version: [Overleaf](https://www.overleaf.com/read/rnfjxkknksnd) and [GitHub](https://github.com/willdfonseca/latex/tree/main/FIA%202020/Portuguese%20(BR)).
  - English version: WIP [**work in progress**]
 - Spanish version: WIP [**work in progress**]
 
