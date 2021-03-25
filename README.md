@@ -3,7 +3,9 @@
 
 Hi folks! This repository is intended to share tools, hints, and LaTeX templates developed by Will D'Andrea Fonseca.
 
-## LaTeX templates
+## 😊 Official LaTeX templates
+
+Templates created in cooperation of the conferences and institutions.
 
 ###   :books: Official FIA 2020 Congress Templates
 FIA 2020 is the **12th  Ibero-American Acoustics Congress** integrating with **XXIX Sobrac Meeting**.
@@ -19,10 +21,29 @@ The congress official LaTeX templates (Portuguese, Spanish, and English) are sim
 
 Ms. Word templates are also being constructed and soon will be also available.
 
-> The basic text (in brazilian portuguese) as well the LaTeX template
-> were developed by Prof. Will D'Andrea Fonseca.
+> The basic text (in brazilian portuguese) as well the LaTeX template were developed by Prof. Will D'Andrea Fonseca.
 
 ##
+
+###   :books: Official Segav 2020 Congress Templates
+Segav is the **(Brazilian) Southern Congress on Acoustics and Vibration**, or in good Brazilian portuguese **Seminário Gaúcho de Acústica e Vibrações**. It is organized by the branch of the Rio Grande do Sul state, out of the Brazilian Society of Acoustics ([Sobrac](http://acustica.org.br/)).
+
+The congress (short paper) official LaTeX and Ms Word templates (in Brazilian portuguese) are simutaneously hosted in [Overleaf](https://pt.overleaf.com/read/vqrvdftgcfkg) and [GitHub](https://github.com/willdfonseca/fia2020).
+
+A special thanks to Rafael Heissler, for adapting the LaTeX version to Ms. Word
+
+> The basic text (in brazilian portuguese) as well the LaTeX template were developed by Prof. Will D'Andrea Fonseca.
+
+**Em português:**
+Modelos de artigos curtos para o Segav 2020 (Seminário Gaúcho de Acústica e Vibrações), organizado pela regional Rio Grande do Sul da [Sobrac](http://acustica.org.br/). Eles podem ser acessados (em LaTeX e Ms Word) aqui no [GitHub](https://github.com/willdfonseca/latex/tree/main/Segav/2020) ou no [Overleaf](https://pt.overleaf.com/read/vqrvdftgcfkg).
+Um agradecimento especial ao Rafael Heissler, por adaptar a versão de de LaTeX para Ms Word.
+> O texto básico e o template foi desenvolvido pelo Prof. Will D'Andrea Fonseca.
+
+
+## 🎨 Unofficial LaTeX templates
+
+That means I created them for personal use. Thus, I sharing them here to support the LaTeX community.
+
 
 ###   :sound: Unofficial Internoise 2021 (improved) Template
 Internoise 2021 is the 50th International Congress and Exposition on Noise Control Engineering. The conference will be virtual due to the world pandemic situation. The official website is https://internoise2021.org.
