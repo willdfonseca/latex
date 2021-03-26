@@ -91,6 +91,8 @@ Or also available in Overleaf:
 
 PS: a special thank to Fernando Diaz, concerning the support on spanish text.
 
+> By the way, the proceedings are at http://www.spacustica.pt/acustica2020/pdf/ProceedingsAcustica2020.pdf
+
 ##
 
 ###   :sound: Unofficial Internoise 2020 (improved) Template
@@ -121,5 +123,26 @@ Starting from the official LaTeX template, the (unofficial) improved version [in
  - Other minor corrections.
 
 Find the template [HERE](https://github.com/willdfonseca/latex/tree/main/ICA/2019). :ocean: Or also available in [Overleaf](https://www.overleaf.com/read/qxdzbrzhpbfm).
+
+> By the way, the proceedings are at http://pub.dega-akustik.de/ICA2019/data/index.html
+
+##
+
+###   :sound: Unofficial ISRA 2019 LaTeX Template
+ISRA 2019 is the International Symposium  on Room Acoustics. The official website is https://www.isra2019.eu.
+
+Starting from the official Ms Word template, the (unofficial) improved version [in the repository] was created. As a satellite conference of ICA 2019, the instructions are almost hte same. Thus, the template was build "in the same fashion" as the ICA version. The organizers only sent a docx version.
+
+Nice stuff inside:
+
+ - Logo with high quality (vector);
+ - Metadata capable;
+ - Natbib to manage references;
+ - Organization of the tex files; and
+ - Other minor corrections.
+
+Find the template [HERE](https://github.com/willdfonseca/latex/tree/main/ISRA/2019). :ocean: Or also available in [Overleaf](https://www.overleaf.com/read/kxqjjmbxhcvx).
+
+> By the way, the proceedings are at https://www.isra2019.eu/sites/isra2019.eu/files/proceedings/index.html
 
 ##
