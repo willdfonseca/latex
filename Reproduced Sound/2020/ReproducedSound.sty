@@ -41,7 +41,7 @@
 \clubpenalty=1000
 \tolerance=3000
 
-\usepackage{etoolbox} %% avoid break in References
+%\usepackage{etoolbox} %% avoid break in References
 %\makeatletter
 %\AtBeginEnvironment{thebibliography}{%
 	 %\interlinepenalty=10000
@@ -72,7 +72,6 @@
  \belowdisplayskip=12pt plus 3pt minus 9pt
  \belowdisplayshortskip=12pt plus 3pt minus 4pt
 }
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Figures & floats
 \usepackage{graphicx,color}
@@ -103,9 +102,8 @@
 \usepackage[hyperindex,pagebackref=false,pdfusetitle,pdfa=true]{hyperref}
 \hypersetup{plainpages=false,colorlinks,breaklinks,linktocpage,hypertexnames=true,naturalnames=false}
 \hypersetup{linkcolor=black,citecolor=black,filecolor=black,urlcolor=blue} 
-\usepackage{url}  
+\usepackage{url, xurl}  
 \urlstyle{same}
-\usepackage{xurl} % if needed
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Including files
@@ -127,7 +125,6 @@
 \makeatletter 
 \renewcommand\@biblabel[1]{#1.\hspace{1.10cm}} 
 \makeatother
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Caption
 \usepackage[font=normalsize,justification=centering, margin=4pt,parskip=0pt,labelsep=endash]{caption}
@@ -196,7 +193,6 @@
 \definecolor{Green02}{rgb}{0,0.5,0}
 \definecolor{Orange02}{rgb}{1,0.6,0.2}
 \definecolor{LightBlue}{RGB}{212,237,255}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Commands for automation
 
@@ -297,7 +293,6 @@
 \advance\dimen0-0.2\ht0
 \setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
 {\box0\lower0.4pt\box2}}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Heading
 \fancypagestyle{plain}{ \fancyhf{} \chead{}  \setlength{\headsep}{2.5cm} 
