@@ -1,0 +1,103 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LATEX TEMPLATE for ICA 2019 (version by Alejandro Osses, UGent, ale.a.osses@gmail.com) based on "ICA 2016"-template
+% with some improvements by Prof. Will D'Andrea Fonseca - 31/05/2019
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[10.5pt, a4paper, oneside]{extarticle}
+\usepackage[utf8]{inputenc}
+\input{ica2019-config.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\PageHeader
+%%% Put your title HERE
+\textbf{[Capitalize only first word: And after colon]}
+%
+%% Athors
+	\author[ ]{Name1 FAMILYNAME1$^{(1)}$, Name2 FAMILYNAME2$^{(2)}$, Name3 FAMILYNAME3$^{(3)}$,...}
+%% Affiliations	
+  	\affil[(1)]{Organisation 1, Country 1, E-mail 1}
+  	\affil[(2)]{Organisation 2, Country 2, E-mail 2}
+  	\affil[(3)]{Organisation 3, Country 3, E-mail 3}
+%%
+}
+\date{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PDF Metadata
+\hypersetup{pdftex,
+            pdfauthor={ Put authors HERE },
+            pdftitle={ Put title HERE },
+            pdfsubject={Put subject HERE},
+            pdfkeywords={ Put keywords HERE },
+            pdfproducer={ICA 2019},
+            pdfcreator={Latex with PDFLatex},
+						pdfstartview={FitH}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Header & Footer
+\PageOne
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Abstract
+\subsection*{\fontsize{10.5}{19.2}\textbf{Abstract}}
+{\fontsize{10.5}{60}\selectfont 
+%% Abstract HERE
+This template provides instructions to authors of papers to be included in the Proceedings of ICA 2019, which will be published online. These instructions are in the format to be used for ALL papers, which shall be submitted as PDF (Portable Document Format) file or as MS-Word (*.DOC / *.DOCX) file. An abstract is required at the start of all papers and shall contain at least 100 words, but not more than 200 words. The abstract shall not include equations, images, numbered references or footnotes. Abstracts will be displayed in the Conference App to help attendees plan their days at the Conference. Authors must upload the Abstract as well as the full paper manuscript for the complete paper via the Congress Website. A maximum of three keywords shall be added below the abstract to provide easy access to related papers in the Proceedings. At least one keyword shall appear on the first page.
+}
+\par\vspace{1.02mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Keywords HERE
+\noindent{\fontsize{11}{60}\selectfont Keywords: Sound, Insulation, Transmission.} 
+% at least 1 keyword is required (maximum of 5 keywords)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fontdimen2\font=4pt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Input PAPER
+\input{paper.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% References
+\addcontentsline{toc}{section}{\refname}
+% Load a bibtex  file
+{\linespread{1.00}\selectfont
+%\bibliographystyle{abbrvnat}
+\bibliographystyle{unsrtnat}
+\bibliography{biblio} % Load bibtex
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% OR use refs inside the tex file
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%\bibliographystyle{abbrvnat}
+%\bibliographystyle{unsrtnat}
+%%%%\renewcommand{\refname}{\normalfont\selectfont\normalsize}
+%%%%\noindent \section*{\uppercase{References}}
+%%%%\vspace{-18pt}
+%
+%\begin{thebibliography}{5}
+%\bibitem{ref1}
+%Author, A.; Author, B. Paper title. Journal name, volume (number), year, pages.
+%
+%\bibitem{Patricio2008}
+%Patrício, J.; Schiappa, F.; Souza, M. The vibration map as a tool for diagnosis and evaluation, International Journal of Acoustics and Vibration, Vol 13 (1), 2008, pp 31-35.
+%
+%\bibitem{prec1}
+%Author, C.; Author, D. Title. Proceedings title, conference venue, date, pages (or indication “In CD-ROM” if the proceedings are only available in electronic version). 
+%
+%\bibitem{Vechiatti2010}
+%Vechiatti, N; et al.  Tests of sound absorption of seats of the Colon Theatre in Buenos Aires. Proceedings of Second Pan-American/Iberian Meeting on Acoustics, Cancun, México, November 15-19, 2010. In CD-ROM.
+%
+%\bibitem{book1}
+%Author, E.; Author, F. Book title, Editor, City (Country), edition, year. 
+%
+%\bibitem{Beranek2004}
+%Beranek, L. Concert Halls and Opera Houses: Music, Acoustics, and Architecture. Springer, NY (USA), 2nd edition, 2004.
+%
+%\bibitem{CEN}
+%CEN, European Standard EN 12354-2: Building acoustics - Estimation of acoustic performance of buildings from the performance of elements - Impact sound insulation between rooms, Belgium, 2002.
+%\end{thebibliography}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% EOF

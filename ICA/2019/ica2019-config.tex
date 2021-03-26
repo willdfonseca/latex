@@ -1,0 +1,153 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LATEX TEMPLATE for ICA 2019 (version by Alejandro Osses, UGent, ale.a.osses@gmail.com) based on "ICA 2016"-template
+% with some improvements by Prof. Will D'Andrea Fonseca - 31/05/2019
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[T1]{fontenc}        % package for character coding
+%\usepackage[left=24mm,right=24mm,top=25mm,bottom=23mm,headsep=2mm,footskip=5mm]{geometry}
+\usepackage[left=25mm,right=20.9mm,top=4.25cm,bottom=3.75cm,headsep=0.25cm,footskip=0.25cm]{geometry}
+%\usepackage{showframe}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Check if the compilation is a PDF
+\usepackage{ifpdf}  %% To enable copy/paste from pdftex-generated PDF
+\ifpdf \input{glyphtounicode} \pdfgentounicode=1\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[english]{babel}
+    \usepackage[affil-it]{authblk}
+    \usepackage{etoolbox}
+    \usepackage{lmodern}
+    \usepackage{setspace}
+    \usepackage{amssymb,amsthm,amsmath}
+    \usepackage{tikz}
+    \usepackage{listings}
+    \usepackage{color}
+    \usepackage{caption}
+    \usepackage{placeins}
+    \usepackage{booktabs}
+    \usepackage{enumerate}
+    \usepackage{graphicx}
+    \usepackage{titlesec}
+    \usepackage{mathptmx}
+    \usepackage{anyfontsize}
+    \usepackage{t1enc}
+    \usepackage{fancyhdr}
+    \usepackage{float,xspace}
+    \usepackage{scalefnt}
+	
+\usepackage{soul,soulutf8} % to be able to use \hl{} command
+\usepackage{tabulary}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue]{hyperref} % added by AO
+\usepackage{url,xurl}
+\urlstyle{same}
+
+\usepackage{bookmark}
+
+\usepackage{textcase}
+  \newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+	\renewcommand{\figurename}{Figure}
+	\renewcommand{\tablename}{Table} 
+\usepackage[colorinlistoftodos]{todonotes}
+\newcommand{\note}[1]{\todo[inline]{#1}}
+
+\captionsetup[figure]{labelsep=period} % none, colon, period, space, quad, newline
+\captionsetup[table]{labelsep=period,aboveskip=-6pt} % trick to put table caption closer to the table
+
+%\renewcommand{\thefootnote}{\arabic{footnote}}
+%\captionsetup[footnote]{belowskip=-24pt}
+% \renewcommand{\thefigure}{\arabic{figure}}
+
+%\setlength{\parindent}{0cm}
+%\setlength{\parskip}{2pt}
+%%\setlength{\textheight}{21cm}
+%%\setlength{\voffset}{-3cm}
+%%\setlength{\headheight}{3cm}
+%%\setlength{\linewidth}{5.5cm}
+%%\setlength{\footskip}{3cm}
+
+\setlength{\parindent}{0cm}
+\setlength{\textheight}{21cm}
+\setlength{\voffset}{-3cm}
+\setlength{\headheight}{4cm}
+\setlength{\parskip}{3pt} % W
+\setlength{\linewidth}{5.5cm}
+\setlength{\footskip}{80pt}
+
+
+\titlespacing*{\section}
+{0pt}{12pt}{0pt}
+\titlespacing*{\subsection}
+{0pt}{12pt}{0pt}
+\titlespacing*{\subsubsection}
+{0pt}{12pt}{0pt}
+\titleformat{\section}
+  {\huge\sffamily\Large\bfseries\color{black}}
+  {\thesection}{1em}{}
+    \titleformat{\subsection}[block]{\bfseries}{\thesubsection}{.5em}{}
+    \titleformat{\subsubsection}[block]{\bfseries}{\thesubsubsection}{.5em}{}
+
+\titleformat{\section}{\fontsize{12}{19}\bfseries}{\thesection}{1em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+%\chead{\vspace*{-1cm}}%\includegraphics[width=16.5cm]{ICA_header2019.png}
+%\cfoot{\vspace*{-1cm}}%\includegraphics[width=16.5cm]{ICA_footer2019.png}}
+%\rfoot{\thepage}
+
+\renewcommand{\headrulewidth}{0pt}
+
+%\renewcommand{\rmdefault}{phv} % Arial
+%\renewcommand{\sfdefault}{phv} % Arial
+\usepackage{mathptmx} % 'Times new roman'
+
+\makeatletter
+\patchcmd{\@maketitle}{\LARGE \@title}{\fontsize{14}{19.2}\selectfont\@title}{}{} % original: 18, 19.2
+% \patchcmd{\abstract}{\small}{\fontsize{10.5}{19.2}\selectfont}{}{}
+\makeatother
+%
+\renewcommand\Authfont{\fontsize{9}{14.4}\selectfont}
+\renewcommand\Affilfont{\fontsize{9}{10.8}} % size of the numbers
+
+%\renewcommand\thanks{\thanksmarkseries{alph}}
+
+\providecommand{\PageHeader}{ \bookmark[page=1,level=1]{Title \& Abstract}
+\vspace{-5.3cm}\includegraphics[width=1\textwidth,page=1]{ica2019-logos.pdf}\\[0.5cm] 
+}
+
+
+\providecommand{\PageOne}{
+\clearpage \setcounter{page}{1}
+\maketitle 
+\thispagestyle{empty} 
+\fancypagestyle{empty}{\fancyhf{} \fancyfoot[C]{\vspace{-18.5mm}\includegraphics[width=1\textwidth,page=2]{ica2019-logos.pdf}}}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{subfig}
+\DeclareSubrefFormat{myparens}{#1~(#2)}
+\captionsetup[subfloat]{subrefformat=myparens,labelformat=parens,position=bottom,font={footnotesize,sf},labelfont={footnotesize,sf},justification=centering, format=hang}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Spacing
+\usepackage[final,kerning=true,spacing=true]{microtype}
+\widowpenalty=1000 \clubpenalty=1000 \tolerance=3000
+\microtypecontext{spacing=nonfrench}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% References
+\usepackage{natbib}
+\setcitestyle{square,sort&compress,comma,numbers}
+\usepackage{hypernat}
+\renewcommand{\bibsection}{\section*{\uppercase{References}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New definition of square root:
+% it renames \sqrt as \oldsqrt
+\let\oldsqrt\sqrt
+% it defines the new \sqrt in terms of the old one
+\def\sqrt{\mathpalette\DHLhksqrt}
+\def\DHLhksqrt#1#2{%
+\setbox0=\hbox{$#1\oldsqrt{#2\,}$}\dimen0=\ht0
+\advance\dimen0-0.2\ht0
+\setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
+{\box0\lower0.4pt\box2}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% EOF
