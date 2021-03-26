@@ -89,7 +89,7 @@ Or also available in Overleaf:
  1. [Portuguese](https://www.overleaf.com/read/jxhgpdbkjhwh); and
  2. [Spanish](https://www.overleaf.com/read/rbrcrvkqswnv).
 
-PS: a special thank to Fernando Diaz, concerning the support on spanish text.
+PS: a special thank to Fernando Diaz, concerning the support on spanish text. Muchas Gracias. =]
 
 > By the way, the proceedings are at http://www.spacustica.pt/acustica2020/pdf/ProceedingsAcustica2020.pdf
 
