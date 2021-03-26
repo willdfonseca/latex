@@ -1,0 +1,77 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LATEX TEMPLATE for ISRA 2019 by Prof. Will D'Andrea Fonseca - 31/05/2019
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[10.5pt, a4paper, oneside]{extarticle}
+\usepackage[utf8]{inputenc}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{isra2019-config.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title
+\title{\centering \PageHeader
+\textbf{\sffamily 
+%%%% Title
+Instructions for preparation of papers to be included in the\\ proceedings of ISRA 2019
+%%%%
+}
+%%%% Authors
+	\author[ ]{
+	Givennames FAMILYNAME$^{1}$; Givennames FAMILYNAME$^{2}$; Givennames FAMILYNAME$^{3}$
+}
+%%%% Affiliations
+  	\affil[1]{Dutch University, The Netherlands}
+		\affil[2]{Acoustic company, Poland}
+		\affil[3]{Institution, Country}
+%%%%		
+\date{}
+} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PDF Metadata
+\hypersetup{pdftex,
+            pdfauthor={ Put authors HERE },
+            pdftitle={ Put title HERE },
+            pdfsubject={Put subject HERE},
+            pdfkeywords={ Put keywords HERE },
+            pdfproducer={ISRA 2019},
+            pdfcreator={Latex with PDFLatex},
+						pdfstartview={FitH}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Emails %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\Email{$^1$\href{mailto:gf@aaa.com}{gf@aaa.com}, $^2$\href{mailto:gf@bbb.co.jp}{gf@bbb.co.jp}, $^3$\href{mailto:gf@ccc.go.jp}{gf@ccc.go.jp} [Please note: It is optional to provide the email address(es) of the author(s). Please make sure that your co-authors concur with the mention of their email address in this paper.]}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Abstract
+\vspace{-12mm}
+\subsection*{\fontsize{10.5}{19.2}\textbf{\uppercase{Abstract}}}
+{\fontsize{10.5}{60}\selectfont
+%%%% Abstract
+This template provides instructions to authors of papers to be included in the Proceedings of ISRA 2019, which will be published online. These instructions are in the format to be used for ALL papers, which shall be submitted as PDF (Portable Document Format) file or as MS-Word (*.DOC / *.DOCX) file. An abstract is required at the start of all papers and shall contain at least 100 words, but not more than 200 words. The abstract shall not include equations, images, numbered references or footnotes. Abstracts will be displayed in the Conference App to help attendees plan their days at the Conference. Authors must upload the Abstract as well as the full paper manuscript for the complete paper via the Congress Website. A maximum of three keywords shall be added below the abstract to provide easy access to related papers in the Proceedings. At least one keyword shall appear on the first page.
+}
+\par\vspace{\baselineskip}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Keywords
+\noindent{\fontsize{11}{60}\selectfont Keywords: Sound, Insulation, Transmission} 
+% at least 1 keyword is required (maximum of 5 keywords)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fontdimen2\font=4pt \setlength\parindent{0.5cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PAPER
+
+\input{paper.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% References
+\addcontentsline{toc}{section}{\refname}
+{\linespread{1.00}\selectfont
+%\bibliographystyle{abbrvnat}
+\bibliographystyle{unsrtnat}
+\bibliography{biblio}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% EOF

@@ -1,0 +1,158 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LATEX TEMPLATE for ISRA 2019 by Prof. Will D'Andrea Fonseca - 31/05/2019
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Check if the compilation is a PDF
+\usepackage{ifpdf} %% To enable copy/paste from pdftex-generated PDF,
+\ifpdf \input{glyphtounicode} \pdfgentounicode=1\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[T1]{fontenc}        % package for character coding
+\usepackage[left=25mm,right=25mm,top=16.5mm,bottom=25mm,headsep=2mm,footskip=5mm]{geometry}
+ %\usepackage{showframe}
+\usepackage[english]{babel}
+    \usepackage[affil-it]{authblk}
+    \usepackage{etoolbox}
+    \usepackage{lmodern}
+    \usepackage{setspace}
+    \usepackage{amssymb, amsthm, amsmath}
+    \usepackage{listings}
+    \usepackage{color, xcolor}
+    \usepackage{caption}
+    \usepackage{placeins}
+    \usepackage{booktabs}
+    \usepackage{enumerate}
+    \usepackage{graphicx}
+    \usepackage{titlesec}
+    \usepackage{anyfontsize}
+    \usepackage{t1enc}
+    \usepackage{fancyhdr}
+    \usepackage{float, xspace}
+    \usepackage{scalefnt}
+\usepackage{indentfirst}
+
+\usepackage{helvet}
+\usepackage{mathptmx, times} % 'Times new roman'
+
+%\usepackage{soul, soulutf8} % to be able to use \hl{} command
+\usepackage[colorinlistoftodos]{todonotes}
+\newcommand{\note}[1]{\todo[inline]{#1}}
+
+\usepackage{tabulary}
+\usepackage[colorlinks = true,
+            linkcolor = blue,
+            urlcolor  = blue,
+            citecolor = blue,
+            anchorcolor = blue]{hyperref}
+\usepackage{url,xurl} \urlstyle{same}
+\usepackage{bookmark}
+
+\usepackage{textcase}
+    \newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+	\renewcommand{\figurename}{Figure}
+	\renewcommand{\tablename}{Table} 
+
+\DeclareCaptionLabelSeparator{bar}{\, -- \,}
+\captionsetup[figure]{labelsep=bar} % none, colon, period, space, quad, newline
+\captionsetup[table]{labelsep=bar,aboveskip=3pt} % trick to put table caption closer to the table
+
+\usepackage{subfig}
+\DeclareSubrefFormat{myparens}{#1~(#2)}
+\captionsetup[subfloat]{subrefformat=myparens,labelformat=parens,position=bottom,font={footnotesize},labelfont={footnotesize},justification=centering, format=hang}
+
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{2pt}
+%\setlength{\textheight}{21cm}
+%\setlength{\voffset}{-3cm}
+%\setlength{\headheight}{3cm}
+%\setlength{\linewidth}{5.5cm}
+%\setlength{\footskip}{3cm}
+
+\titlespacing*{\section}
+{0pt}{12pt}{0pt}
+\titlespacing*{\subsection}
+{0pt}{12pt}{0pt}
+\titlespacing*{\subsubsection}
+{0pt}{12pt}{0pt}
+\titleformat{\section}
+  {\huge\sffamily\Large\bfseries\color{black}}
+  {\thesection}{1em}{}
+    \titleformat{\subsection}[block]{\bfseries\sffamily}{\thesubsection}{.5em}{}
+    \titleformat{\subsubsection}[block]{\bfseries\sffamily}{\thesubsubsection}{.5em}{}
+
+\titleformat{\section}{\fontsize{12}{19}\bfseries\sffamily}{\thesection}{1em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+
+\makeatletter
+\patchcmd{\@maketitle}{\LARGE \@title}{\fontsize{14}{19.2}\selectfont\@title}{}{} % original: 18, 19.2
+\makeatother
+
+\renewcommand\Authfont{\fontsize{11}{14.4}\selectfont}
+\renewcommand\Affilfont{\fontsize{10}{10.8}} % size of the numbers
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Commands
+\providecommand{\PageHeader}{ \bookmark[page=1,level=1]{Title \& Abstract}
+\vspace{-1.6cm}\includegraphics[width=1\textwidth,page=1]{head.pdf}\\[0.5cm]  
+}
+
+\newcommand{\Email}[1]{
+\clearpage \setcounter{page}{1} \maketitle
+\thispagestyle{empty}
+\fancypagestyle{empty}{\fancyhf{} \fancyfoot[L]{\rule{250pt}{0.5pt}\\
+%%% Emails %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ #1 }}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Spacing
+\usepackage[final,kerning=true,spacing=true]{microtype}
+\widowpenalty=1000 \clubpenalty=1000 \frenchspacing
+\tolerance=3000
+%\microtypecontext{spacing=nonfrench}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% References
+\usepackage{natbib}
+\setcitestyle{square,sort&compress,comma,numbers}
+\usepackage{hypernat}
+\renewcommand{\bibsection}{\section*{\uppercase{References}}}
+
+\makeatletter
+\renewcommand\@biblabel[1]{#1.}
+\makeatother
+
+\providecommand{\doi}[1]{doi:~\href{http://dx.doi.org/#1}{ #1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New definition of square root:
+% it renames \sqrt as \oldsqrt
+\let\oldsqrt\sqrt
+% it defines the new \sqrt in terms of the old one
+\def\sqrt{\mathpalette\DHLhksqrt}
+\def\DHLhksqrt#1#2{%
+\setbox0=\hbox{$#1\oldsqrt{#2\,}$}\dimen0=\ht0
+\advance\dimen0-0.2\ht0
+\setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
+{\box0\lower0.4pt\box2}}
+%%% Table stuff %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{multirow}
+\usepackage{booktabs,colortbl}
+\usepackage{threeparttable}
+\newcommand{\ratb}[1]{\renewcommand{\arraystretch}{#1}}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{V}{>{\centering\arraybackslash} m{.4\linewidth} }
+\newcolumntype{A}[2]{%
+    >{\minipage{\dimexpr#1\linewidth-2\tabcolsep-#2\arrayrulewidth\relax}\vspace\tabcolsep}%
+    c<{\vspace\tabcolsep\endminipage}}
+
+\newcommand{\mymulticolumn}[3]{\multicolumn{#1}{>{\columncolor{\RowColorName}}#2}{#3}}
+\newcommand{\SetRowColor}[1]{\noalign{\gdef\RowColorName{#1}}\rowcolor{\RowColorName}}
+%% Some colors
+\definecolor{purple}{RGB}{112,48,160}
+\definecolor{gold}{RGB}{255,192,0}
+\definecolor{LightGreen}{RGB}{235,255,251}
+\definecolor{LightOrange}{RGB}{255,250,237}
+\definecolor{LightBlue}{RGB}{212,237,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% EOF
