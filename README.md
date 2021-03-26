@@ -42,7 +42,7 @@ Um agradecimento especial ao Rafael Heissler, por adaptar a versão de de LaTeX 
 
 ## 🎨 Unofficial LaTeX templates
 
-That means I created them for personal use. Thus, I sharing them here to support the LaTeX community.
+That means I created them for personal use. Usually because I have published in the conference. Thus, I am sharing them here to support the LaTeX community.
 
 
 ###   :sound: Unofficial Internoise 2021 (improved) Template
@@ -52,7 +52,7 @@ Starting from the official LaTeX template ([here](https://internoise2021.org/aut
 
  - Typos were correctect;
  - Metadata capable;
- - Logo with high quality;
+ - Logo with high quality (vector);
  - Natbib to manage references;
  - Organization of the tex files; and
  - Other minor corrections.
@@ -81,7 +81,7 @@ Acústica 2020 comprises: XI Iberian Congress of Acoustics, 51º Spanish Congres
 > Devido à crise Pandémica, houve necessidade de adiar o Congresso Acústica2020, que integra o Congresso Espanhol de Acústica - TecniAcústica 2020, o qual irá então ocorrer entre os dias 21 a 23 de outubro de 2020, sob os auspícios da Universidade do Algarve.  
 No entanto, e com muita pena nossa, a fim de evitar as aglomerações decorrentes de participação presencial, o Congresso irá decorrer no formato E-Congress, ou seja, todo o programa se manterá idêntico, como se de um Congresso normal se tratasse, mas agora sem a presença de congressistas. Assim, os participantes irão ser convidados a enviar um vídeo das suas apresentações, que serão emitidas em canal próprio (Sala Virtual), à hora e no "slot" programados, recebendo todos os congressistas uma senha de acesso ao sistema para poderem visualizar as apresentações e também participar nas discussões respetivas via plataforma Zoom.
 
-The LaTeX (unofficial) template was created based upon the instructions and Ms Word template (sent by the organizers). A few improvements were included as typo corrections and examples.
+The LaTeX (unofficial) template was created based upon the instructions and Ms Word template (sent by the organizers). A few improvements were included as typo corrections, examples, and vector logo.
 
 Find the templates [HERE](https://github.com/willdfonseca/latex/tree/main/Acustica%202020) (in GitHub). :ocean: 
 Or also available in Overleaf:
@@ -98,7 +98,7 @@ Internoise 2020 is the 49th International Congress and Exposition on Noise Contr
 
 Starting from the official LaTeX template, the (unofficial) improved version [in the repository] was created. Improvements:
 
- - Logo with high quality;
+ - Logo with high quality (vector);
  - Typos were correctect;
  - Metadata capable;
  - Natbib to manage references;
@@ -106,5 +106,20 @@ Starting from the official LaTeX template, the (unofficial) improved version [in
  - Other minor corrections.
 
 Find the template [HERE](https://github.com/willdfonseca/latex/tree/main/Internoise/2020). :ocean: Or also available in [Overleaf](https://www.overleaf.com/read/pbfdrdrmrpdv).
+
+##
+
+###   :sound: Unofficial ICA 2019 (improved) Template
+ICA 2019 is the 23rd International Congress on Acoustics. The official website is http://www.ica2019.org.
+
+Starting from the official LaTeX template, the (unofficial) improved version [in the repository] was created. Improvements:
+
+ - Logo with high quality (vector);
+ - Metadata capable;
+ - Natbib to manage references;
+ - Organization of the tex files; and
+ - Other minor corrections.
+
+Find the template [HERE](https://github.com/willdfonseca/latex/tree/main/ICA/2019). :ocean: Or also available in [Overleaf](https://www.overleaf.com/read/qxdzbrzhpbfm).
 
 ##
