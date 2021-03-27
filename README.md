@@ -14,7 +14,7 @@ Per the website at:
 The congress official LaTeX templates (Portuguese, Spanish, and English) are simutaneously hosted in [Overleaf](https://www.overleaf.com/), [GitHub](https://github.com/willdfonseca/fia2020), and [FIA 2020 Website](https://fia2020.com.br/).    
 
 
- - Portuguese version: [Overleaf](https://www.overleaf.com/read/rnfjxkknksnd) and [GitHub](https://github.com/willdfonseca/latex/tree/main/FIA%202020/Portuguese%20(BR)).
+ - Portuguese version: [Overleaf](https://www.overleaf.com/read/rnfjxkknksnd) and [GitHub](https://github.com/willdfonseca/latex/tree/main/FIA%202020/Portuguese%20(BR)) 🌊.
  - English version: WIP [**work in progress**]
  - Spanish version: WIP [**work in progress**]
 
@@ -25,18 +25,44 @@ Ms. Word templates are also being constructed and soon will be also available.
 ##
 
 ###   :books: Official Segav 2020 Congress Templates
-Segav is the **(Brazilian) Southern Congress on Acoustics and Vibration**, or in good Brazilian portuguese ***Seminário Gaúcho de Acústica e Vibrações***. It is organized by the branch of the Rio Grande do Sul state, out of the Brazilian Society of Acoustics ([Sobrac](http://acustica.org.br/)).
+Segav is the **(Brazilian) Southern Seminar on Acoustics and Vibration**, or in good Brazilian portuguese ***Seminário Gaúcho de Acústica e Vibrações***. It is organized by the branch of the Rio Grande do Sul state, out of the Brazilian Society of Acoustics ([Sobrac](http://acustica.org.br/)).
 
-The congress (short paper) official LaTeX and Ms Word templates (in Brazilian portuguese) are simutaneously hosted in [Overleaf](https://pt.overleaf.com/read/vqrvdftgcfkg) and [GitHub](https://github.com/willdfonseca/latex/tree/main/Segav/2020).
+The congress (short paper) official LaTeX and Ms Word templates (in Brazilian portuguese) are simutaneously hosted in 🌊 [Overleaf](https://pt.overleaf.com/read/vqrvdftgcfkg) and [GitHub](https://github.com/willdfonseca/latex/tree/main/Segav/2020).
 
 A special thanks to Rafael Heissler, for adapting the LaTeX version to Ms. Word
 
 > The basic text (in brazilian portuguese) as well the LaTeX template were developed by Prof. Will D'Andrea Fonseca.
 
 **Em português:**
-Modelos de artigos curtos para o Segav 2020 (Seminário Gaúcho de Acústica e Vibrações), organizado pela regional Rio Grande do Sul da [Sobrac](http://acustica.org.br/). Eles podem ser acessados (em LaTeX e Ms Word) aqui no [GitHub](https://github.com/willdfonseca/latex/tree/main/Segav/2020) ou no [Overleaf](https://pt.overleaf.com/read/vqrvdftgcfkg).
+Modelos de artigos curtos para o Segav 2020 (Seminário Gaúcho de Acústica e Vibrações), organizado pela regional Rio Grande do Sul da [Sobrac](http://acustica.org.br/). Eles podem ser acessados (em LaTeX e Ms Word) aqui no 🌊 [GitHub](https://github.com/willdfonseca/latex/tree/main/Segav/2020) ou no [Overleaf](https://pt.overleaf.com/read/vqrvdftgcfkg).
 Um agradecimento especial ao Rafael Heissler, por adaptar a versão de de LaTeX para Ms Word.
 > O texto básico e o template foi desenvolvido pelo Prof. Will D'Andrea Fonseca.
+
+##
+
+###   :books: Official Sobrac 2018 Congress Templates
+Sobrac 2018 is the **Meeting of Brazilian Society of Acoustics**, or in good Brazilian portuguese ***XXVIII Encontro Sociedade Brasileira de Acústica***. It is organized by the Brazilian Society of Acoustics ([Sobrac](http://acustica.org.br/)) — its [website](http://www.unisinos.br/eventos/xxviii-encontro-da-sociedade-brasileira-de-acustica-ex123152-00001) is still online.
+
+The novelties of this event were:
+
+ - Two reviewers for each paper and
+ - Each paper has a unique DOI (Digital Object Identifier) code.
+
+The congress official LaTeX and Ms Word templates (in Brazilian portuguese) are simutaneously hosted in 🌊 [Overleaf](https://www.overleaf.com/read/gqwprypdrvbw) and [GitHub](https://github.com/willdfonseca/latex/tree/main/Sobrac/2018).
+
+The proceedings (ISSN: 2238-6726) are hosted in https://proceedings.science/sobrac/
+
+A special thanks to Rafael Heissler, for reviewing Ms. Word version.
+
+> The basic text (in brazilian portuguese) as well the LaTeX (and Ms Words) template were developed by Prof. Will D'Andrea Fonseca.
+> I also was the cientific-academic chair of the event.
+
+**Em português:**
+Modelos de artigos para o XXVIII Encontro Sociedade Brasileira de Acústica, organizado pela regional Rio Grande do Sul da [Sobrac](http://acustica.org.br/). Eles podem ser acessados (em LaTeX e Ms Word) aqui no 🌊 [GitHub](https://github.com/willdfonseca/latex/tree/main/Sobrac/2018) ou no [Overleaf](https://www.overleaf.com/read/gqwprypdrvbw).
+
+> O texto básico e o template foi desenvolvido pelo Prof. Will D'Andrea Fonseca.
+> Eu também fui o coordenador científico do evento.
+> Os artigos (ISSN: 2238-6726) podem ser acessados em https://proceedings.science/sobrac/
 
 ##
 
@@ -69,13 +95,13 @@ From the original website https://reproducedsound.co.uk (and [IoA website](https
 > The 36th Reproduced Sound Conference will focus on all aspects of electroacoustics, and will bring together practitioners, educators and students in an atmosphere with a friendly and enthusiastic 'buzz', which is a hallmark of past RS conferences.
 > **17-18-19 November 2020**,  **Virtual Conference** (**3 half day sessions**)
 
-The LaTeX (unofficial) template was created based upon the instructions and Ms Word template (sent by the organizers). The organizers only sent a docx version.
+The LaTeX (unofficial) template was created based upon the instructions and Ms Word template (sent by the organizers). The organizers only sent a docx version. In ReproducedSound.tex, before the end, it is possible to activate the Abstract and bio pages, usually used in the submission process.
 
 Find the template [HERE](https://github.com/willdfonseca/latex/tree/main/Reproduced%20Sound/2020). :ocean: Or also available in [Overleaf](https://www.overleaf.com/read/xxrypjyqhkcn).
 
 ##
 
-###     :sound: Unofficial Acustica LaTeX 2020 Template
+###     :sound: Unofficial Acustica 2020 LaTeX Template
 Acústica 2020 comprises: XI Iberian Congress of Acoustics, 51º Spanish Congress on Acoustics, and TecniAcústica (2020). From the original website http://www.spacustica.pt/acustica2020/index.html (in portuguese):
 
 > Devido à crise Pandémica, houve necessidade de adiar o Congresso Acústica2020, que integra o Congresso Espanhol de Acústica - TecniAcústica 2020, o qual irá então ocorrer entre os dias 21 a 23 de outubro de 2020, sob os auspícios da Universidade do Algarve.  
