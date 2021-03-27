@@ -1,0 +1,155 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Comandos adicionais desenvolvidos por
+%%% Prof. William D'Andrea Fonseca - Eng. Acústica UFSM
+%%% Versão de 13/04/2018
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% Comandos para o texto
+%% Aliases
+\newcommand{\dg}{{\ensuremath{^\circ}}}  
+
+\DeclareRobustCommand{\eg}{e.g.\@\xspace}
+\DeclareRobustCommand{\ie}{i.e.\@\xspace}
+
+\makeatletter
+\DeclareRobustCommand{\etc}{%
+    \@ifnextchar{.}%
+        {etc}%
+        {etc.\@\xspace}%
+}
+\DeclareRobustCommand{\etal}{%
+    \@ifnextchar{.}%
+        {{et~al}}%
+        {{et~al.}\@\xspace}%
+}
+\makeatother
+%%%%%%%%%%%%%% Comandos para troca de línguas
+\newcommand*{\txEN}[1]{%
+  \foreignlanguage{english}{#1}%
+}
+
+\newcommand*{\txBR}[1]{%
+  \foreignlanguage{brazilian}{#1}%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Edita Bookmarks no texto
+\usepackage{bookmark}
+%e.g. \bookmark[page=1,level=0]{Title Page}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Referenciar figuras:
+\newcommand{\figura}[1]{Figura~\ref{#1}} %\figura{g1}  --> Figura X 
+\newcommand{\Figura}[1]{Figura~\ref{#1}}
+\newcommand{\figuras}[1]{Figuras~\ref{#1}}
+\newcommand{\Figuras}[1]{Figuras~\ref{#1}}
+\newcommand{\fign}[1]{\ref{#1}} 
+\newcommand{\Fig}[1]{Fig.~\ref{#1}}
+\newcommand{\subfigura}[1]{Figura~\subref*{#1}\xspace} %\subfigura{g1}  --> Figura X (a)
+\newcommand{\subfiguras}[1]{Figuras~\subref*{#1}\xspace}
+\newcommand{\sfign}[1]{\subref*{#1}\xspace}
+%END: Referenciar figuras.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Referenciar tabelas:
+\newcommand{\tabela}[1]{Tabela~\ref{#1}}
+\newcommand{\Tabela}[1]{Tabela~\ref{#1}}
+\newcommand{\tabelas}[1]{Tabelas~\ref{#1}}
+\newcommand{\Tabelas}[1]{Tabelas~\ref{#1}}
+\newcommand{\tabn}[1]{\ref{#1}\xspace}
+\newcommand{\Tab}[1]{Tab.~\ref{#1}}
+%END: Referenciar tabelas.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Referenciar quadros:
+\newcommand{\quadr}[1]{Quadro~\ref{#1}}
+\newcommand{\Quadro}[1]{Quadro~\ref{#1}}
+\newcommand{\quadros}[1]{Quadros~\ref{#1}}
+\newcommand{\Quadros}[1]{Quadros~\ref{#1}}
+\newcommand{\quadn}[1]{\ref{#1}\xspace}
+%END: Referenciar quadros.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Referenciar equações:
+\newcommand{\equacao}[1]{Equação~\eqref{#1}}
+\newcommand{\Equacao}[1]{Equação~\eqref{#1}}
+\newcommand{\equacoes}[1]{Equações~\eqref{#1}}
+\newcommand{\Equacoes}[1]{Equações~\eqref{#1}}
+\newcommand{\eqn}[1]{\eqref{#1}}
+\newcommand{\eq}[1]{eq.~\eqref{#1}}
+\newcommand{\Eq}[1]{Eq.~\eqref{#1}}
+%END: Referenciar equações.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Referenciar seção:
+\newcommand{\secao}[1]{Seção~\ref{#1}}
+\newcommand{\Secao}[1]{Seção~\ref{#1}}
+\newcommand{\secoes}[1]{Seções~\ref{#1}}
+\newcommand{\Secoes}[1]{Seções~\ref{#1}}
+\newcommand{\secn}[1]{\ref{#1}} 
+%END: Referenciar seção.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Referenciar item:
+\newcommand{\itemref}[1]{item~\ref{#1}}
+\newcommand{\itens}[1]{itens~\ref{#1}}
+\newcommand{\Item}[1]{Item~\ref{#1}}
+\newcommand{\Itens}[1]{Itens~\ref{#1}}
+%END: Referenciar item.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Declarar capítulos
+\newcommand{\capitulo}[1]{Capítulo~\ref{#1}\xspace}
+\newcommand{\capitulos}[1]{Capítulos~\ref{#1}\xspace}
+\newcommand{\capn}[1]{\ref{#1}\xspace}
+\newcommand{\apendice}[1]{Apêndice~\ref{#1}\xspace}
+\newcommand{\anexo}[1]{Anexo~\ref{#1}\xspace}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Declarar páginas
+\newcommand{\pagina}[1]{página~\pageref{#1}\xspace}
+\newcommand{\paginas}[1]{páginas~\pageref{#1}\xspace}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Matemática
+\DeclareMathOperator{\ji}{j}
+\DeclareMathOperator{\dt}{d}
+\DeclareMathOperator{\e}{e}
+\DeclareMathOperator{\xp}{exp}
+
+\renewcommand{\Re}{\mbox{Re}}
+\renewcommand{\Im}{\mbox{Im}}
+\newcommand{\sen}{\operatorname{sen}} 
+\newcommand{\senh}{\operatorname{senh}}
+\newcommand{\hada}{\operatorname{HAD}}
+\newcommand{\F}{\mathfrak{F}} % F de Fourier
+\newcommand{\dotfr}{\raisebox{+0.5ex}{\; .}}
+\newcommand{\cotfr}{\raisebox{+0.5ex}{\; ,}}
+
+%%%%%%%%%%%%% Comandos para superscript e subscript, escreva 
+\newcommand{\sub}[1]{\raisebox{-0.5ex}{\scriptsize #1}}
+\newcommand{\supe}[1]{\raisebox{0.7ex}{\scriptsize #1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% Escrever texto dentro das equacoes
+\newcommand{\tx}[1]{\text{#1}}								  % Uso \tx{}
+\newcommand{\txu}[1]{\ensuremath{_{\text{#1}}}} % Uso \txu{}	
+\newcommand{\txup}[1]{\ensuremath{^{\text{#1}}}}% Uso \txup{}	
+\newcommand{\txf}[1]{\text{\footnotesize #1}}	  % Uso \txf{}
+\newcommand{\txs}[1]{\text{\scriptsize #1}}		  % Uso \txs{}
+\newcommand{\txy}[1]{\text{\tiny #1}}		        % Uso \txy{}
+
+%%%%%%%%%%%%%% Fracoes no texto
+\usepackage{xfrac}
+%e.g. \sfrac{numerator}{denominator}
+
+%%%%%%%%%%%%%% Opcoes avancadas no enumerate
+\usepackage{enumerate}
+
+%%%%%%%%%%%%%% Raiz quadrada com ``fechamento''
+% Uso:
+% \sqrt{1982} ou \oldsqrt{1982}
+
+% New definition of square root:
+% it renames \sqrt as \oldsqrt
+\let\oldsqrt\sqrt
+% it defines the new \sqrt in terms of the old one
+\def\sqrt{\mathpalette\DHLhksqrt}
+\def\DHLhksqrt#1#2{%
+\setbox0=\hbox{$#1\oldsqrt{#2\,}$}\dimen0=\ht0
+\advance\dimen0-0.2\ht0
+\setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
+{\box0\lower0.4pt\box2}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% EOF

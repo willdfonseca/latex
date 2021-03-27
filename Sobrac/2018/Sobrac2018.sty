@@ -1,0 +1,140 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Template para o artigo do evento da SOBRAC 2018
+%% Desenvolvido Prof. Dr William D'Andrea Fonseca - Eng. Acústica UFSM
+%% Versão de 13/04/2018
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Check if the compilation is a PDF
+\usepackage{ifpdf}    
+\ifpdf \input{glyphtounicode} \pdfminorversion=7 \pdfimageresolution=300
+\pdfgentounicode=1\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[T1]{fontenc}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Para ajuste de língua
+\newcommand{\txtEN}{\selectlanguage{english}} 
+\newcommand{\txtBR}{\selectlanguage{brazil}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Tipografia e hifenização
+\usepackage[final,kerning=true,spacing=true]{microtype}
+\widowpenalty=1000 \clubpenalty=1000 \tolerance=3000
+\microtypecontext{spacing=nonfrench}
+
+% Correção da hifenização
+%\tolerance=1 
+%\emergencystretch=\maxdimen 
+%\hyphenpenalty=10000 
+%\hbadness=10000 
+
+\usepackage{etoolbox} %% Para não quebrar as referências
+\makeatletter
+\AtBeginEnvironment{thebibliography}{%
+	 \interlinepenalty=10000
+   \clubpenalty10000
+   \@clubpenalty \clubpenalty
+   \widowpenalty10000}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Margens
+\usepackage[a4paper,top=3cm, bottom=2cm, left=3cm, right=2cm]{geometry}
+\setlength{\columnsep}{1.25cm}%
+\setlength{\parskip}{12pt}%
+\setlength{\parindent}{0pt}%
+\usepackage{setspace}
+\singlespacing	% Espaço simples entre linha
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Matemática e equações
+\usepackage{amsmath,mathrsfs,amsfonts,amssymb}
+\usepackage{bigints,nicefrac} 
+\usepackage{upgreek}
+\usepackage{relsize}
+
+% Espaço envolta das equações
+\AtBeginDocument{%
+ \abovedisplayskip=10pt plus 3pt minus 9pt
+ \abovedisplayshortskip=5pt plus 3pt
+ \belowdisplayskip=12pt plus 3pt minus 9pt
+ \belowdisplayshortskip=7.5pt plus 3pt minus 4pt
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Figuras e floats
+\usepackage{graphicx,color}
+\usepackage[labelformat=parens]{subfig}
+\usepackage[usenames,dvipsnames]{xcolor}   
+
+\usepackage{xspace,fancyhdr,float,calc}
+ \setlength{\textfloatsep}{12pt}
+ \setlength{\intextsep}{12pt}
+ \setlength{\floatsep}{12pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Caption
+\usepackage[font=footnotesize,labelfont=bf,justification=centering, margin=4pt,parskip=0pt]{caption}
+\DeclareSubrefFormat{myparens}{#1~(#2)}
+\captionsetup[subfloat]{subrefformat=myparens,font=footnotesize,labelfont=bf,captionskip=10pt}
+\captionsetup[table]{belowskip=0pt,aboveskip=5pt}	
+\captionsetup[figure]{belowskip=0pt,aboveskip=14pt}
+
+%%% References %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[square,numbers,sort&compress]{natbib}
+\usepackage{hypernat}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Links e URL
+\usepackage[hyphens]{url}   
+\usepackage[hyperindex,pagebackref=false,pdfusetitle,pdfa=true]{hyperref}
+\hypersetup{plainpages=false,colorlinks,breaklinks,linktocpage,hypertexnames=true,naturalnames=false}
+%\hypersetup{linkcolor=black,citecolor=black,filecolor=black,urlcolor=black} % Not Colorful
+\hypersetup{linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue} % Colorful
+\usepackage{url,xurl} \urlstyle{same}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Configuração de títulos e seções
+\usepackage{titlesec}
+\renewcommand{\headrulewidth}{0pt}
+	
+\titleformat{\section}
+  {\normalfont\fontsize{12}{0}\bfseries}{\thesection.}{0.5em}{\MakeUppercase}
+\titleformat{\subsection}
+  {\normalfont\fontsize{12}{0}\bfseries}{\thesubsection}{0.5em}{}
+\titleformat{\subsubsection}
+  {\normalfont\fontsize{12}{0}\bfseries}{\thesubsubsection}{0.5em}{}
+	
+\titlespacing*{\section}{0pt}{6pt}{0pt}
+\titlespacing*{\subsection}{0pt}{6pt}{0pt}
+\titlespacing*{\subsubsection}{0pt}{6pt}{0pt}
+
+%%% Tabelas %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{booktabs,colortbl}
+\newcommand{\ratb}[1]{\renewcommand{\arraystretch}{#1}}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcommand{\SetRowColor}[1]{\noalign{\gdef\RowColorName{#1}}\rowcolor{\RowColorName}}
+%% Some colors
+\definecolor{framecolor}{RGB}{226,215,255}	
+% Colors for tables
+\definecolor{toptb}{RGB}{221,239,255}
+\definecolor{lighttb}{RGB}{255,247,221}
+\definecolor{lightlinetb}{RGB}{208,239,255}
+\definecolor{purple}{RGB}{112,48,160}
+\definecolor{gold}{RGB}{255,192,0}
+\definecolor{LightGreen}{RGB}{235,255,251}
+\definecolor{LightRed}{RGB}{255,237,237}
+\definecolor{LightOrange}{RGB}{255,250,237}
+\definecolor{LightOrange2}{RGB}{255,235,193}
+\definecolor{Green02}{rgb}{0,0.5,0}
+\definecolor{Orange02}{rgb}{1,0.6,0.2}
+\definecolor{LightBlue}{RGB}{212,237,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy} \fancyhead{} \cfoot{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\providecommand{\Cabecalho}{
+\bookmark[page=1,level=1]{Título \& Resumo}
+\begin{figure}[H] \centering \vspace{-24mm} \hspace{-5mm}
+\includegraphics[width=16.6cm]{Cabecalho.pdf}
+\end{figure} \vspace{8pt}
+}
+\providecommand{\doi}[1]{doi:~\href{http://dx.doi.org/#1}{ #1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% EOF
+
