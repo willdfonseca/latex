@@ -115,8 +115,6 @@
 \usepackage{hypernat} % Para comprimir e ainda citar
 \usepackage{notoccite}
 
-%\usepackage{etoolbox}
-%\patchcmd{\thebibliography}{\unnumberedchapter}{\chapter}{}{‌​}
 \usepackage[numbib]{tocbibind} % Number bib section
 
 \usepackage{etoolbox}
@@ -148,20 +146,9 @@
 \titleformat{\subsubsection}
   {\normalfont\fontsize{12}{12.0}\bfseries}{\thesubsubsection}{0.55cm}{}
 	
-%\titlespacing*{\section}{0pt}{-1pt plus 1pt minus 1pt}{-4pt plus 1pt minus 1pt}
-%\titlespacing*{\subsection}{0pt}{5pt plus 1pt minus 1pt}{-4pt plus 1pt minus 1pt}
-%\titlespacing*{\subsubsection}{0pt}{-1pt plus 1pt minus 1pt}{-4pt plus 1pt minus 1pt}
-
 \titlespacing*{\section}{0pt}{4pt}{0pt}
 \titlespacing*{\subsection}{0pt}{4pt}{0pt}
 \titlespacing*{\subsubsection}{0pt}{2pt}{0pt}
-
-%\titlespacing{command}{left spacing}{before spacing}{after spacing}[right]
-% spacing: how to read {12pt plus 4pt minus 2pt}
-%           12pt is what we would like the spacing to be
-%           plus 4pt means that TeX can stretch it by at most 4pt
-%           minus 2pt means that TeX can shrink it by at most 2pt
-%           This is one example of the concept of, 'glue', in TeX
 
 %%% Tables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \PassOptionsToPackage{table}{xcolor}
@@ -218,59 +205,7 @@
 \newcommand{\PACS}[1]{\renewcommand{\PACSPaper}{#1}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Commands for text %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%% Ref. figures
-\newcommand{\figura}[1]{Figure~\ref{#1}} %\figura{g1}  --> Figure X 
-\newcommand{\Figura}[1]{Figure~\ref{#1}}
-\newcommand{\figuras}[1]{Figures~\ref{#1}}
-\newcommand{\Figuras}[1]{Figures~\ref{#1}}
-\newcommand{\fign}[1]{\ref{#1}} 
-\newcommand{\Fig}[1]{Fig.~\ref{#1}}
-\newcommand{\subfigura}[1]{Figure~\subref*{#1}\xspace} %\subfigura{g1}  --> Figure X (a)
-\newcommand{\subfiguras}[1]{Figures~\subref*{#1}\xspace}
-\newcommand{\sfign}[1]{\subref*{#1}\xspace}
-%END: Ref. figures
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Ref. tables
-\newcommand{\tabela}[1]{Table~\ref{#1}}
-\newcommand{\Tabela}[1]{Table~\ref{#1}}
-\newcommand{\tabelas}[1]{Tables~\ref{#1}}
-\newcommand{\Tabelas}[1]{Tables~\ref{#1}}
-\newcommand{\tabn}[1]{\ref{#1}\xspace}
-\newcommand{\Tab}[1]{Tab.~\ref{#1}}
-%END: Ref. tables
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Ref. equations
-\newcommand{\equacao}[1]{Equation~\eqref{#1}}
-\newcommand{\Equacao}[1]{Equation~\eqref{#1}}
-\newcommand{\equacoes}[1]{Equations~\eqref{#1}}
-\newcommand{\Equacoes}[1]{Equations~\eqref{#1}}
-\newcommand{\eqn}[1]{\eqref{#1}}
-\newcommand{\eq}[1]{eq.~\eqref{#1}}
-\newcommand{\Eq}[1]{Eq.~\eqref{#1}}
-%END: Ref. equations
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Ref. section
-\newcommand{\secao}[1]{Section~\ref{#1}}
-\newcommand{\Secao}[1]{Section~\ref{#1}}
-\newcommand{\secoes}[1]{Sections~\ref{#1}}
-\newcommand{\Secoes}[1]{Sections~\ref{#1}}
-\newcommand{\secn}[1]{\ref{#1}} 
-%END: Ref. section
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Ref. item
-\newcommand{\itemref}[1]{item~\ref{#1}}
-\newcommand{\itens}[1]{itens~\ref{#1}}
-\newcommand{\Item}[1]{Item~\ref{#1}}
-\newcommand{\Itens}[1]{Items~\ref{#1}}
-%END: Ref. item
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Ref. pages
-\newcommand{\pagina}[1]{page~\pageref{#1}\xspace}
-\newcommand{\paginas}[1]{pages~\pageref{#1}\xspace}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Math
+%% Math
 \DeclareMathOperator{\ji}{j}
 \DeclareMathOperator{\dt}{d\!}
 \DeclareMathOperator{\e}{e}

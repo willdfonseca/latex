@@ -108,7 +108,26 @@ p(t) = \frac{s\left( t-\frac{R(t)}{c} \right )}{\; 4\pi R(t)(1-M\,\text{cos}[\th
 \label{eq:example}
 \end{equation}
 %
-is just for testing.
+is just for testing. When referring, it is possible to use Equation~\eqref{eq:example}.
+
+Table~\ref{tab:table} is just another example.
+
+\begin{table}[H]
+  \centering 
+  \caption{Example of table.}
+	\fontsize{11}{12}\selectfont 
+    \begin{tabular}{C{3.8cm} | C{3.8cm}}
+    \toprule
+		\SetRowColor{LightOrange}
+    \textbf{ Number of cores } & \textbf{ Time spent (s)} \\
+	  \midrule
+		16 & 5120\\
+		\rowcolor[gray]{.95} 32	& 2555\\
+		64 & 1100\\
+    \bottomrule
+    \end{tabular}
+    \label{tab:table}
+\end{table}%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
