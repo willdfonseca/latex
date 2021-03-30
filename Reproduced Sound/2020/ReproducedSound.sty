@@ -37,9 +37,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Typography and hyphenation
 \usepackage[final,kerning=true,spacing=true]{microtype}
-\widowpenalty=1000
-\clubpenalty=1000
-\tolerance=3000
+\widowpenalty=1000 \clubpenalty=1000 \tolerance=3000
+\microtypecontext{spacing=nonfrench}
 
 %\usepackage{etoolbox} %% avoid break in References
 %\makeatletter
@@ -112,7 +111,7 @@
 %%% References %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[super]{natbib} % The natbib package sorts the numbers and detects consecutive sequences, so creating “[2–4,6]”.
 \setcitestyle{sort&compress,comma}
-\usepackage{hypernat} % Para comprimir e ainda citar
+\usepackage{hypernat} % To compress and cite
 \usepackage{notoccite}
 
 \usepackage[numbib]{tocbibind} % Number bib section
