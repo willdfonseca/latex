@@ -20,7 +20,7 @@ It is anticipated that the INTER-2021 WASHINGTON DC Proceedings will be distribu
 \section{Manuscript Format}
 
 \noindent
-Margin settings, paragraphs, figure and table are explained here. 
+Margin settings, paragraphs, figure and table are explained\footnote{This is an example footnote, see Section~\ref{sec.figs}.}  here. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Margin Settings}
@@ -42,12 +42,12 @@ Margin settings, paragraphs, figure and table are explained here.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Figures, Equations, Tables}
+\subsection{Figures, Equations, Tables} \label{sec.figs}
 
 \noindent
 All figures, tables, equations, photos, graphs, etc., must be shown shortly after they are mentioned, placed at the centre of a page. 
 
-The captions of figures (which may include photos) are put below the figures and photos (see Figure~\ref{fig:1}).  They are centered if one line long, and fully justified if longer than one line.  They should be referred to in the text as Figure~\ref{fig:1}, Figure 2, etc. 
+The captions of figures (which may include photos) are put below the figures and photos (see Figure~\ref{fig:1}).  They are centered if one line long, and fully justified if longer than one line.  They should be referred to in the text as Figure~\ref{fig:1}, Figure~\ref{fig:1}, etc. 
 
 \begin{figure}[h!]
 \begin{center}
@@ -55,6 +55,22 @@ The captions of figures (which may include photos) are put below the figures and
   \end{center}
   \caption{The INTER-NOISE 2021 logo features many famous buildings in Washington DC.}
   \label{fig:1}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \subfloat[First.]{ \label{fig.A}
+        \includegraphics[width=0.30\linewidth,page=2]{internoise-2021.pdf}
+    }
+    \hspace{20mm}
+    \subfloat[Second.]{ \label{fig.B}
+        \includegraphics[width=0.30\linewidth,page=2]{internoise-2021.pdf}
+    }
+    \vspace{-1.0mm}
+    \caption{The INTER-NOISE 2021 logo.} 
+    \label{fig:2}
+\vspace{-3.0mm}    
 \end{figure}
 
 The equations should be referenced as Equation~\ref{Eq:1}, Equation 2, etc. For example:  Equation~\ref{Eq:1}, the formula for estimating the mean value, is:
@@ -72,9 +88,10 @@ The caption for a table should be placed just above the table and the table numb
 
 \begin{table}[H]
 \caption{Example of values displayed in a table.}
+\vspace{-5mm}
 \label{Tab:1}
 \begin{center}
-\begin{tabular}{c c c } 
+\begin{tabular}{c c c} 
  \hline
  \textbf{Test Number} &  \textbf{Variable 1}& \textbf{Variable 2}  \\ [0.5ex] 
  \hline
@@ -109,7 +126,7 @@ Here are the instructions for submitting manuscripts.
 \subsection{Submission of Manuscripts}
 
 \noindent
-Submit your manuscript as a PDF file using the link on the INTER-NOISE 2021 website (www.internoise2021.org). 
+Submit your manuscript as a PDF file using the link on the INTER-NOISE 2021 website (\url{www.internoise2021.org}). 
 
 Before submitting the manuscript, you need to pay the registration fee and if you submit multiple manuscripts, you need to pay the extra nominal charge for each additional manuscript.
 

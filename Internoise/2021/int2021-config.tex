@@ -22,13 +22,16 @@
 \titleformat{\section}
 {\bfseries\uppercase}{\thesection.}{1em}{}
 \titleformat{\subsection}
-{\bfseries}{\thesection.\thesubsection.}{1em}{}
-\renewcommand{\labelitemi}{\textendash}
-\renewcommand{\labelitemii}{\textendash}
+{\bfseries}{\thesubsection.}{1em}{}
+\titleformat{\subsubsection}
+{\bfseries}{\thesection.\thesubsubsection.}{1em}{}
 
+\usepackage{subfig} %W
 \usepackage{graphicx} % used to insert the figure
 \usepackage{multirow} % used for the table
-%\usepackage[font=it]{caption}
+\usepackage[font=small]{caption} %W
+\DeclareSubrefFormat{myparens}{#1~(#2)}
+\captionsetup[subfloat]{subrefformat=myparens,labelformat=parens,position=bottom,font={small,rm}}
 %\usepackage{cite} % W
 %\usepackage{breakurl} % W
 \usepackage{indentfirst}
@@ -49,7 +52,7 @@
 \renewcommand\eqref[1]{Equation~\ref{#1}}
 
 \renewcommand{\thesection}{\arabic{section}}
-\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
 \renewcommand{\arraystretch}{1.25}
 
 \renewcommand{\refname}{References} 
