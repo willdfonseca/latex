@@ -2,7 +2,7 @@
 %%% Template para de LaTeX para o evento 12º Congresso Iberoamericano de Acústica 
 %%%                      em conjunto com XXIX Encontro da SOBRAC
 %%% Baseado no modelo da Revista Acústica e Vibrações da SOBRAC
-%%% Release 25/03/2021
+%%% Release 01/10/2021
 %%%	Desenvolvido por por Prof. William D'Andrea Fonseca, Dr. Eng. - Engenharia Acústica UFSM
 %%% will.fonseca@eac.ufsm.br
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -12,18 +12,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Primeira página
 \thispagestyle{firststyle}
-% \newgeometry{top=2.1cm, bottom=2cm, left=1.9cm, right=1.9cm, headsep=5mm}
+\newgeometry{top=2.1cm, bottom=2cm, left=1.9cm, right=1.9cm, headsep=8mm}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Título
-\begin{textblock}{170}(37,12)
+\begin{textblock}{170}(37,10)
 \includegraphics[width=0.82\textwidth,page=1]{FIA-logo.pdf}
 \end{textblock}
 
 \twocolumn[
 \begin{@twocolumnfalse}
+
 \vspace{60pt}
 \begin{center}
-{\fontsize{18}{22}\selectfont\bfseries 
+{\sffamily\fontsize{16}{20}\selectfont\bfseries 
 %% Título
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \TituloCompletoArtigo
@@ -59,11 +60,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Title
 \begin{otherlanguage*}{english}
-\EnglishTitle
+{\sffamily\EnglishTitle}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Abstract
-		\textbf{Abstract} \vspace{5pt}
+		{\sffamily\textbf{Abstract}} \vspace{5pt}
 		
 		{\fontsize{11}{13}\selectfont
 		\AbstractArtigo
@@ -81,9 +82,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{@twocolumnfalse}
 ]
-% \restoregeometry 
-% \newgeometry{top=2.1cm, bottom=2cm, left=1.9cm, right=1.9cm, headsep=5mm}
-\pagestyle{plain}
-
+\restoregeometry
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % EOF
