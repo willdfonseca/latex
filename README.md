@@ -1,3 +1,4 @@
+
 # Will's LaTeX repository!
 
 Hi folks! This repository is intended to share tools, hints, and LaTeX templates developed by Will D'Andrea Fonseca.
@@ -6,12 +7,12 @@ Hi folks! This repository is intended to share tools, hints, and LaTeX templates
 
 Templates created in cooperation of the conferences and institutions.
 
-###   :books: Official FIA 2020 Congress Templates
-FIA 2020 is the **12th  Ibero-American Acoustics Congress** integrating with **XXIX Sobrac Meeting**.
+###   :books: Official FIA 2020/22 Congress Templates
+FIA 2020/22 is the **12th  Ibero-American Acoustics Congress** integrating with **XXIX Sobrac Meeting**.
 Per the website at:
- - https://fia2020.com.br/
+ - https://fia2020.com.br/ OR https://fia2022.com.br/
 
-The congress official LaTeX templates (Portuguese, Spanish, and English) are simutaneously hosted in [Overleaf](https://www.overleaf.com/), [GitHub](https://github.com/willdfonseca/fia2020), and [FIA 2020 Website](https://fia2020.com.br/).    
+The congress official LaTeX templates (Portuguese, Spanish, and English) are simutaneously hosted in [Overleaf](https://www.overleaf.com/), [GitHub](https://github.com/willdfonseca/fia2020), and [FIA 2020/22 Website](https://fia2022.com.br/).    
 
 
  - Portuguese version: [Overleaf](https://www.overleaf.com/read/rnfjxkknksnd) and [GitHub](https://github.com/willdfonseca/latex/tree/main/FIA%202020/Portuguese%20(BR)) 🌊.
@@ -21,6 +22,25 @@ The congress official LaTeX templates (Portuguese, Spanish, and English) are sim
 Ms. Word templates are also being constructed and soon will be also available.
 
 > The basic text (in brazilian portuguese) as well the LaTeX template were developed by Prof. Will D'Andrea Fonseca.
+
+##
+
+###   :books: Official Segav 2021 Congress Templates
+Segav is the **(Brazilian) Southern Seminar on Acoustics and Vibration**, or in good Brazilian portuguese ***Seminário Gaúcho de Acústica e Vibrações***. It is organized by the branch of the Rio Grande do Sul state, out of the Brazilian Society of Acoustics ([Sobrac](http://acustica.org.br/)). 
+Per the website at:
+ - http://www.segav.org 
+
+The congress (short paper) official LaTeX and Ms Word templates (in Brazilian portuguese) are simutaneously hosted in 🌊 [Overleaf](https://www.overleaf.com/read/gtxwpfrgdtgk) and [GitHub](https://github.com/willdfonseca/latex/tree/main/Segav/2021).
+
+
+> The basic text (in brazilian portuguese) as well the LaTeX template were developed by Prof. Will D'Andrea Fonseca.
+
+**Em português:**
+Modelos de artigos curtos para o Segav 2021 (Seminário Gaúcho de Acústica e Vibrações), organizado pela regional Rio Grande do Sul da [Sobrac](http://acustica.org.br/). Eles podem ser acessados (em LaTeX e Ms Word) aqui no 🌊 [GitHub](https://github.com/willdfonseca/latex/tree/main/Segav/2021) ou no [Overleaf](https://www.overleaf.com/read/gtxwpfrgdtgk).
+Veja mais informações no website:
+ - http://www.segav.org 
+
+> O texto básico e o template foi desenvolvido pelo Prof. Will D'Andrea Fonseca.
 
 ##
 
