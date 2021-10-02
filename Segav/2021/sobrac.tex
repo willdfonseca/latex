@@ -1,0 +1,58 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Template para de LaTeX para a VI SeGAV-e
+% Seminário Gaúcho de Acústica e Vibrações
+%%% Release 22/09/2021
+%%%	Desenvolvido por por Prof. William D'Andrea Fonseca
+%%% will.fonseca@eac.ufsm.br
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt, a4paper, twoside, twocolumn]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Linguagem e entrada
+\usepackage[utf8]{inputenc} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{AeV, Will}  %%% Configurações básicas do template & Pacote com configurações adicionais e opcionais
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Dados do artigo
+
+\Autores{Fonseca,~W.~D'A.} % Apenas nomes no estilo Sobrenome, Nome; Sobrenome, Nome
+\AutoresFiliacoes{Fonseca,~W.~D'A.$^1$} % Utilize números como marcadores
+
+%% Busque usar uma linha ou duas no máximo para cada autor
+\Filiacoes{$^1$\,Engenharia Acústica, Universidade Federal de Santa Maria, Av. Roraima nº 1000,\\
+Cidade Universitária, Santa Maria, RS, will.fonseca@eac.ufsm.br}
+
+\TituloCompleto{Instruções e modelo de artigo para o VI SeGAV-e}
+\TituloCurto{Instruções e modelo de artigo para o VI SeGAV-e}
+
+\PalavrasChave{artigo técnico, SeGAV, 2021, Sobrac, acústica, áudio, vibrações}
+
+\Resumo{Esse campo é destinado ao resumo do artigo que deve ter entre 200 e 350 palavras.
+O título, resumo e palavras-chave constituem parte da primeira página do artigo.  O resumo deve fazer uma apresentação concisa do artigo técnico científico, contendo, uma introdução, o objetivo, uma síntese da metodologia, o principal resultado e a principal conclusão (preferencialmente nessa ordem). Assim, o leitor pode conhecer a essência do conteúdo do artigo. Lembre-se que o resumo é como o \textit{trailer} de um filme, as pessoas ficarão interessadas em ler completamente o artigo se o resumo lhes interessar. O resumo não deve conter informações novas não contidas no artigo; abreviações indefinidas; discussão prévia de outra literatura; referências e citações e excesso de detalhes acerca dos métodos empregados. Ele também não é o parágrafo de introdução do documento, isso deve ser colocado no início do texto. Utilize apenas informações úteis e relevantes, faça um exercício de empatia com o possível leitor interessado. Para se obter um resumo coeso, elegante e de acordo com o artigo, escreva uma prévia, realize a escrita completa do documento e, ao final, revise-o observando se o conteúdo dele reflete de forma consistente o teor do documento. Seguindo o resumo, o autor deve listar até cinco palavras-chave (evite colocar as mesmas palavras que formam o título do artigo).}
+
+\NOEnglishData % Comente essa linha para adicionar dado em inglês
+\TitleArticle{Instructions and article template for VI SeGAV} % Title in English 
+\Keywords{technical paper, SeGAV, Sobrac, acoustics, audio, vibration}
+\Abstract{Abstract in English.}
+
+\Metadata % Includes the metada into the PDF
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document} \setcounter{page}{1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Primeira.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% ARTIGO
+
+\input{Artigo.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Referências
+\renewcommand{\refname}{Referências} 
+\bibliographystyle{abntex2-num} 
+{\fontrefs \bibliography{bibliografia}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+% EOF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
