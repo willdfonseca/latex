@@ -1,13 +1,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Template para de LaTeX para o evento 12º Congresso Iberoamericano de Acústica 
-%%%                      em conjunto com XXIX Encontro da SOBRAC
-%%% Baseado no modelo da Revista Acústica e Vibrações da SOBRAC
-%%% Release 30/07/2021
+%%%                      em conjunto com XXIX Encontro da Sobrac
+%%% Baseado no modelo da Revista Acústica e Vibrações da Sobrac
+%%% Release 04/04/2022
 %%%	Desenvolvido por por Prof. William D'Andrea Fonseca, Dr. Eng. - Engenharia Acústica UFSM
 %%% will.fonseca@eac.ufsm.br
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \usepackage{carlito}
-\usepackage{helvet}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Check if the compilation is a PDF
 \usepackage{iftex}    
@@ -34,10 +31,10 @@
 \newcommand{\txtSP}{\selectlanguage{spanish}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Ajuste de página e margens
-\usepackage[top=2cm, bottom=2cm, left=1.8cm, right=1.8cm, headsep=5mm]{geometry}
+\usepackage[top=2.1cm, bottom=2cm, left=1.9cm, right=1.9cm, headsep=5mm]{geometry}
 % \usepackage{showframe}
-\setlength{\columnsep}{1.0cm}
-\setlength{\parskip}{6pt}%
+\setlength{\columnsep}{1.10cm}
+\setlength{\parskip}{8pt}%
 \setlength{\parindent}{0pt}%
 \usepackage{setspace}
 \singlespacing	% Espaço simples entre linha
@@ -45,7 +42,9 @@
 %%% Tipografia e hifenização
 \usepackage[final,kerning=true,spacing=true]{microtype}
 \microtypecontext{spacing=nonfrench}
-\widowpenalty=1000 \clubpenalty=1000 \tolerance=3000
+\widowpenalty=1000
+\clubpenalty=1000
+\tolerance=3000
 
 %\usepackage{etoolbox} %% Para não quebrar as referências
 %\makeatletter
@@ -101,7 +100,6 @@
 \hypersetup{linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue} 
 \urlstyle{same}
 \usepackage{url, xurl}  % To break URLS
-\usepackage{bookmark}
 %%% References %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliografia
 \usepackage{natbib} % The natbib package sorts the numbers and detects consecutive sequences, so creating “[2–4,6]”.
@@ -109,7 +107,7 @@
 \usepackage{hypernat} % Para comprimir e ainda citar
 \usepackage{notoccite}
 \setlength{\bibsep}{4pt plus 0.3ex}
-\newcommand*{\doi}[1]{doi:~\href{http://dx.doi.org/#1}{ #1}}
+\newcommand*{\doi}[1]{doi:\href{http://dx.doi.org/#1}{ #1}}
 \newcommand{\fontrefs}{\par\fontsize{10}{12}\selectfont}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Caption
@@ -123,11 +121,11 @@
 %%% Configuração de títulos e seções
 \usepackage{titlesec}
 \titleformat{\section}
-  {\normalfont\fontsize{11.5}{13.5}\bfseries}{\sffamily\thesection.}{0.5em}{\sffamily}
+  {\normalfont\fontsize{12}{14.5}\bfseries}{\thesection.}{0.5em}{\MakeUppercase}
 \titleformat{\subsection}
-  {\normalfont\fontsize{10.5}{12.5}\bfseries}{\sffamily\thesubsection}{0.5em}{\sffamily}
+  {\normalfont\fontsize{12}{14.5}\bfseries}{\thesubsection}{0.5em}{}
 \titleformat{\subsubsection}
-  {\normalfont\fontsize{10.5}{12.5}\bfseries}{\sffamily\thesubsubsection}{0.5em}{\sffamily}
+  {\normalfont\fontsize{12}{14.5}\bfseries}{\thesubsubsection}{0.5em}{}
 	
 \titlespacing*{\section}{0pt}{6pt}{0pt}
 \titlespacing*{\subsection}{0pt}{6pt}{0pt}
@@ -252,7 +250,7 @@
 \newcommand{\Affiliations}[1]{\renewcommand{\FiliacoesArtigo}{#1}}
 
 \providecommand{\TituloCompletoArtigo}{}
-\newcommand{\TittleComplete}[1]{\renewcommand{\TituloCompletoArtigo}{#1}}
+\newcommand{\TitleComplete}[1]{\renewcommand{\TituloCompletoArtigo}{#1}}
 
 \providecommand{\TituloCurtoArtigo}{}
 \newcommand{\TitleShort}[1]{\renewcommand{\TituloCurtoArtigo}{#1}}
@@ -282,22 +280,22 @@
 		%%%%%%%%%%%%%%%%%%%%%%%%% PACs:
 		\vspace{0.7\baselineskip}
 		{\fontsize{11}{11}\selectfont
-		\textbf{PACS: }
+		\textbf{PACS:\,}
 		\PACSArtigo.
 		\par}	
     }
 }
 
 \providecommand{\EnglishTitle}{
-\sffamily\textbf{\TitleArticleArtigo}\par
+\textbf{\TitleArticleArtigo}\par
 \vspace{0.5\baselineskip}
 }
 \newcommand{\SuppressTitle}{\renewcommand{\EnglishTitle}{}}
 
 \providecommand{\ResumoTexto}{
-		{\sffamily\textbf{\ResumoBR}} \vspace{5pt}
+		\textbf{\ResumoBR} \vspace{5pt}
 		
-		{\fontsize{11}{12.5}\selectfont 
+		{\fontsize{11}{13}\selectfont 
 		\ResumoArtigo
 		\par}
 		%%%%%%%%%%%%%%%%%%%%%%%%% Palavras-chave
@@ -308,7 +306,7 @@
 		%%%%%%%%%%%%%%%%%%%%%%%%% PACs:
 		\vspace{0.7\baselineskip}
 		{\fontsize{11}{11}\selectfont
-		\textbf{PACS: }
+		\textbf{PACS:\,}
 		\PACSArtigo.
 		\par}					
     \vspace{6mm}
@@ -321,7 +319,7 @@
             pdfauthor={\AutoresArtigo},
             pdftitle= {\TituloCompletoArtigo},
             pdfsubject={PACS: \PACSArtigo},
-            pdfkeywords={\PalavrasChaveArtigo{}.\, Keywords:  \KeywordsArtigo{}.
+            pdfkeywords={Keywords: \KeywordsArtigo{}.
 						\quad\quad Abstract:\,\AbstractArtigo},
             pdfproducer={LaTeX: FIA 2020 | XXIX Sobrac},
             pdfcreator={LaTeX with PDFLatex},

@@ -1,8 +1,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Template para de LaTeX para o evento 12º Congresso Iberoamericano de Acústica 
-%%%                      em conjunto com XXIX Encontro da SOBRAC
-%%% Baseado no modelo da Revista Acústica e Vibrações da SOBRAC
-%%% Release 01/10/2021
+%%%                      em conjunto com XXIX Encontro da Sobrac
+%%% Baseado no modelo da Revista Acústica e Vibrações da Sobrac
+%%% Release 19/04/2022
 %%%	Desenvolvido por por Prof. William D'Andrea Fonseca, Dr. Eng. - Engenharia Acústica UFSM
 %%% will.fonseca@eac.ufsm.br
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -12,22 +12,21 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Primeira página
 \thispagestyle{firststyle}
-\newgeometry{top=2.1cm, bottom=2cm, left=1.9cm, right=1.9cm, headsep=8mm}
+% \newgeometry{top=2.1cm, bottom=2cm, left=1.9cm, right=1.9cm, headsep=5mm}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Título
-\begin{textblock}{170}(37,10)
+\begin{textblock}{170}(37,12)
 \includegraphics[width=0.82\textwidth,page=1]{FIA-logo.pdf}
 \end{textblock}
 
 \twocolumn[
 \begin{@twocolumnfalse}
-
 \vspace{60pt}
 \begin{center}
-{\sffamily\fontsize{16}{20}\selectfont\bfseries 
+{\fontsize{18}{22}\selectfont\bfseries 
 %% Título
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\TituloCompletoArtigo
+\TituloCompletoArtigo \bookmark[page=1,level=1]{Título e Resumo}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \par}
 
@@ -60,13 +59,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Title
 \begin{otherlanguage*}{english}
-{\sffamily\EnglishTitle}
+{\EnglishTitle}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Abstract
-		{\sffamily\textbf{Abstract}} \vspace{5pt}
+		{\textbf{Abstract}} \vspace{5pt}
 		
-		{\fontsize{11}{13}\selectfont
+		{\fontsize{11}{12.5}\selectfont
 		\AbstractArtigo
 		\par}
 		%%%%%%%%%%%%%%%%%%%%%%%%% Keywords
@@ -82,6 +81,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{@twocolumnfalse}
 ]
-\restoregeometry
+% \restoregeometry 
+% \newgeometry{top=2.1cm, bottom=2cm, left=1.9cm, right=1.9cm, headsep=5mm}
+\pagestyle{plain}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % EOF
