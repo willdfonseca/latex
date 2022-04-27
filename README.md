@@ -14,12 +14,10 @@ Per the website at:
 
 The congress official LaTeX templates (Portuguese, Spanish, and English) are simutaneously hosted in [Overleaf](https://www.overleaf.com/), [GitHub](https://github.com/willdfonseca/fia2020), and [FIA 2020/22 Website](https://fia2022.com.br/).    
 
-
- - Portuguese version: [Overleaf](https://www.overleaf.com/read/rnfjxkknksnd) and [GitHub](https://github.com/willdfonseca/latex/tree/main/FIA%202020/Portuguese%20(BR)) 🌊.
- - English version: WIP [**work in progress**]
- - Spanish version: WIP [**work in progress**]
-
-Ms. Word templates are also being constructed and soon will be also available.
+ - Portuguese version: [Overleaf](https://www.overleaf.com/read/rnfjxkknksnd) 🌊
+ - English version: [Overleaf](https://www.overleaf.com/read/hgryywpgmxdx)
+ - Spanish version: [Overleaf](https://www.overleaf.com/read/rszcxtwshzfr)
+  - Word template version: [GitHub](https://github.com/willdfonseca/fia2020/tree/main/Docx%20(Word))
 
 > The basic text (in brazilian portuguese) as well the LaTeX template were developed by Prof. Will D'Andrea Fonseca.
 
