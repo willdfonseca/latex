@@ -1,4 +1,5 @@
 
+
 # Will's LaTeX repository!
 
 Hi folks! This repository is intended to share tools, hints, and LaTeX templates developed by Will D'Andrea Fonseca.
@@ -6,6 +7,27 @@ Hi folks! This repository is intended to share tools, hints, and LaTeX templates
 ## 😊 Official LaTeX templates
 
 Templates created in cooperation of the conferences and institutions.
+
+###   :books: Official Sobrac 2023 Congress Templates
+Sobrac 2023 is the **XXX Meeting of Brazilian Society of Acoustics**.
+See the website at: https://www.even3.com.br/sobracnatal2023/
+
+The congress official LaTeX templates (Portuguese) is simutaneously hosted in [Overleaf](https://www.overleaf.com/) and [GitHub](https://github.com/willdfonseca/latex).    
+
+ - Portuguese version: [Overleaf](https://www.overleaf.com/read/xnhkrtjwprcn) 🌊
+  - Word template version: [GitHub](https://github.com/willdfonseca/latex/blob/main/Sobrac/2023/Template%20Sobrac%202023%20-%20Ms%20Word%20(Portugu%C3%AAs).docx)
+
+> The basic text (in Brazilian Portuguese) as well the LaTeX (and Word) templates were developed by Prof. Will D'Andrea Fonseca.
+
+**Em português:**
+Modelos de artigos para o **XXX Encontro da  Sociedade Brasileira de Acústica** ([Sobrac](http://acustica.org.br/)). 
+Eles podem ser acessados (em LaTeX e Ms Word) aqui no 🌊 [GitHub](https://github.com/willdfonseca/latex/tree/main/Sobrac/2023) ou no [Overleaf](https://www.overleaf.com/read/xnhkrtjwprcn).
+Veja mais informações do evento no website: https://www.even3.com.br/sobracnatal2023/
+
+> O texto básico e templates foram desenvolvidos pelo Prof. Will D'Andrea Fonseca.
+
+
+##
 
 ###   :books: Official FIA 2020/22 Congress Templates
 FIA 2020/22 is the **12th  Ibero-American Acoustics Congress** integrating with **XXIX Sobrac Meeting**.
