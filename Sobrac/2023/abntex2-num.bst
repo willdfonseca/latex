@@ -1896,6 +1896,7 @@ FUNCTION {thesis}
   address "address" bibinfo.check output
   abnt.thesis.year #0 = abnt.thesis.year #2 = or
     {format.date "year" output.check new.sentence} 'skip$ if$
+  format.doi output	    
   format.note output new.block
   format.url
   fin.entry

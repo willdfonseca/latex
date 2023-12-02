@@ -57,6 +57,7 @@
    %\widowpenalty10000}
 %\makeatother
 
+
 %%% Nota de rodapé %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[bottom,flushmargin,hang,multiple]{footmisc}
 
@@ -195,10 +196,11 @@
 
 %%%%%%%%%%%%%% Comandos para o texto
 %% Aliases
-\newcommand{\dg}{{\ensuremath{^\circ}}}  
+\newcommand{\dg}{{\ensuremath{^\circ}}\xspace}  
 
-\DeclareRobustCommand{\eg}{e.g.\@\xspace}
-\DeclareRobustCommand{\ie}{i.e.\@\xspace}
+\DeclareRobustCommand{\eg}{{\itshape e.g.}\@\xspace}
+\DeclareRobustCommand{\ie}{{\itshape i.e.}\@\xspace}
+\DeclareRobustCommand{\vs}{{\itshape vs.}\@\xspace}
 
 \makeatletter
 \DeclareRobustCommand{\etc}{%
@@ -296,7 +298,7 @@
             pdftitle= {\TituloCompletoArtigo},
             pdfsubject={\PalavrasChaveArtigo},
             pdfkeywords={\PalavrasChaveArtigo{}. \quad\quad Resumo:\,\ResumoArtigo},
-            pdfproducer={LaTeX: XXX Sobrac},
+            pdfproducer={LaTeX: XXX Encontro da Sobrac},
             pdfcreator={LaTeX with PDFLatex},
 		  pdfstartview={FitH}}
 }
