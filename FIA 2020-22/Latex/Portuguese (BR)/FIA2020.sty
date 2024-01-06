@@ -56,6 +56,12 @@
    %\widowpenalty10000}
 %\makeatother
 
+%% Evite hífen
+% \tolerance=1
+% \emergencystretch=\maxdimen
+% \hyphenpenalty=10000
+% \hbadness=10000
+
 %%% Nota de rodapé %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[bottom,flushmargin,hang,multiple]{footmisc}
 
@@ -198,8 +204,8 @@
 }
 \DeclareRobustCommand{\etal}{%
     \@ifnextchar{.}%
-        {{et~al}}%
-        {{et~al.}\@\xspace}%
+        {{\itshape et~al}}%
+        {{\itshape et~al.}\@\xspace}%
 }
 \makeatother
 
