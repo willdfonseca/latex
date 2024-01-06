@@ -992,6 +992,7 @@ FUNCTION {mastersthesis}
   school "school" output.check
   address output
   format.date "year" output.check
+  format.doi output
   format.url output
   new.block
   note output
@@ -1026,6 +1027,7 @@ FUNCTION {phdthesis}
   school "school" output.check
   address output
   format.date "year" output.check
+  format.doi output
   format.url output
   new.block
   note output
