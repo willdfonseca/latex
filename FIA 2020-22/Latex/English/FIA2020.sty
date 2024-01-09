@@ -31,9 +31,9 @@
 \newcommand{\txtSP}{\selectlanguage{spanish}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Ajuste de página e margens
-\usepackage[top=2.1cm, bottom=2cm, left=1.9cm, right=1.9cm, headsep=5mm]{geometry}
+\usepackage[top=2cm, bottom=2cm, left=1.8cm, right=1.8cm, headsep=5mm]{geometry}
 % \usepackage{showframe}
-\setlength{\columnsep}{1.10cm}
+\setlength{\columnsep}{1.0cm}
 \setlength{\parskip}{8pt}%
 \setlength{\parindent}{0pt}%
 \usepackage{setspace}
@@ -54,6 +54,12 @@
    %\@clubpenalty \clubpenalty
    %\widowpenalty10000}
 %\makeatother
+
+%% Evite hífen
+% \tolerance=1
+% \emergencystretch=\maxdimen
+% \hyphenpenalty=10000
+% \hbadness=10000
 
 %%% Nota de rodapé %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[bottom,flushmargin,hang,multiple]{footmisc}
@@ -107,7 +113,7 @@
 \usepackage{hypernat} % Para comprimir e ainda citar
 \usepackage{notoccite}
 \setlength{\bibsep}{4pt plus 0.3ex}
-\newcommand*{\doi}[1]{doi:\href{http://dx.doi.org/#1}{ #1}}
+\newcommand*{\doi}[1]{doi:~\href{http://dx.doi.org/#1}{ #1}}
 \newcommand{\fontrefs}{\par\fontsize{10}{12}\selectfont}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Caption
@@ -116,6 +122,7 @@
 \captionsetup[subfloat]{subrefformat=myparens,font=footnotesize,labelfont=bf,captionskip=10pt}
 \captionsetup[table]{belowskip=0pt,aboveskip=5pt}	
 \captionsetup[figure]{belowskip=0pt,aboveskip=14pt}
+\captionsetup[quadro]{belowskip=0pt,aboveskip=5pt}	
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Configuração de títulos e seções
