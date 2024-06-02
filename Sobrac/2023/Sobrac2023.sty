@@ -270,6 +270,8 @@
 
 \providecommand{\KeywordsArtigo}{} \newcommand{\Keywords}[1]{\renewcommand{\KeywordsArtigo}{#1}}
 
+\providecommand{\DOIArtigo}{} \newcommand{\DOI}[1]{\renewcommand{\DOIArtigo}{#1}}
+
 \providecommand{\EnglishTitle}{
 \textbf{\TitleArticleArtigo}\par
 \vspace{0.5\baselineskip}
@@ -295,9 +297,9 @@
 \providecommand{\Metadata}{
 \hypersetup{pdftex,
             pdfauthor={\AutoresArtigo},
-            pdftitle= {\TituloCompletoArtigo},
+            pdftitle= {\TituloCompletoArtigo \; (\TitleArticleArtigo)},
             pdfsubject={\PalavrasChaveArtigo},
-            pdfkeywords={\PalavrasChaveArtigo{}. \quad\quad Resumo:\,\ResumoArtigo},
+            pdfkeywords={Palavras-chave:\; \PalavrasChaveArtigo{}. \quad\quad Resumo:\; \ResumoArtigo},
             pdfproducer={LaTeX: XXX Encontro da Sobrac},
             pdfcreator={LaTeX with PDFLatex},
 		  pdfstartview={FitH}}
