@@ -280,6 +280,9 @@
 \providecommand{\PACSArtigo}{}
 \newcommand{\PACS}[1]{\renewcommand{\PACSArtigo}{#1}}
 
+\providecommand{\DOIArtigo}{}
+\newcommand{\DOI}[1]{\renewcommand{\DOIArtigo}{#1}}
+
 % Manage complete English paper
 
 \providecommand{\PACSEnglish}{}
@@ -313,7 +316,7 @@
 		%%%%%%%%%%%%%%%%%%%%%%%%% PACs:
 		\vspace{0.7\baselineskip}
 		{\fontsize{11}{11}\selectfont
-		\textbf{PACS: }
+		\textbf{PACS:\,}
 		\PACSArtigo.
 		\par}					
     \vspace{6mm}
@@ -324,11 +327,11 @@
 \providecommand{\Metadata}{
 \hypersetup{pdftex,
             pdfauthor={\AutoresArtigo},
-            pdftitle= {\TituloCompletoArtigo},
+            pdftitle= {\TituloCompletoArtigo \; (\TitleArticleArtigo)},
             pdfsubject={PACS: \PACSArtigo},
             pdfkeywords={\PalavrasChaveArtigo{}.\, Keywords:  \KeywordsArtigo{}.
 						\quad\quad Abstract:\,\AbstractArtigo},
-            pdfproducer={LaTeX: FIA 2020 | XXIX Sobrac},
+            pdfproducer={LaTeX: FIA 2020/22 | XXIX Sobrac},
             pdfcreator={LaTeX with PDFLatex},
 			pdfstartview={FitH}}
 }

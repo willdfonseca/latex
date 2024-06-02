@@ -301,7 +301,7 @@ FUNCTION {format.issn}
 FUNCTION {format.url}
 { url empty$
     { "" }
-    { new.block "Disponível em: \url{" url * "}" * }
+    { new.block "Disponible en: \url{" url * "}" * }
   if$
 }
 
