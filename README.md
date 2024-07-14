@@ -8,11 +8,52 @@ Hi folks! This repository is intended to share tools, hints, and LaTeX templates
 
 Templates created in cooperation of the conferences and institutions.
 
+##
+
+###   :books: Official FIA 2044 Congress Templates
+FIA 2024 is the **13th  Ibero-American Acoustics Congress**.
+Check the website at: https://www.fia2024.cl/
+
+The congress official LaTeX templates (Portuguese and Spanish) are simultaneously hosted in [Overleaf](https://www.overleaf.com/), [GitHub](https://github.com/willdfonseca/latex/tree/main/FIA%202024), and [FIA 2024 Website](https://www.fia2024.cl/).    
+
+ - Portuguese version: [Overleaf](https://www.overleaf.com/read/tjbcfwbtfdtz#869489) 🌊
+ - Spanish version: [Overleaf](https://www.overleaf.com/read/txvwtjmpvwcc#cdb016)
+  - Word template version: [GitHub](https://github.com/willdfonseca/latex/tree/main/FIA%202024)
+
+> The basic text (in brazilian portuguese ans spanish) as well the LaTeX template were developed by Prof. Will D'Andrea Fonseca.
+
+### Português
+FIA 2024 é o **13º Congresso Ibero-Americano de Acústica**.
+Veja o site em: https://www.fia2024.cl/
+
+Os *templates* oficiais do congresso em LaTeX (Português e Espanhol) estão simultaneamente hospedados no [Overleaf](https://www.overleaf.com/), [GitHub](https://github.com/willdfonseca/latex/tree/main/FIA%202024) e [Site FIA 2024](https://www.fia2024.cl/).
+
+- Versão em Português: [Overleaf](https://www.overleaf.com/read/tjbcfwbtfdtz#869489) 🌊
+- Versão em Espanhol: [Overleaf](https://www.overleaf.com/read/txvwtjmpvwcc#cdb016)
+- Versão do template em Word: [GitHub](https://github.com/willdfonseca/latex/tree/main/FIA%202024)
+
+> O texto básico (em português brasileiro e espanhol), bem como o template LaTeX, foram desenvolvidos pelo Prof. Will D'Andrea Fonseca.
+
+### Español
+
+FIA 2024 es el **13º Congreso Iberoamericano de Acústica**.
+Vea el sitio web: https://www.fia2024.cl/
+
+Las plantillas oficiales del congreso en LaTeX (Portugués y Español) están alojadas simultáneamente en [Overleaf](https://www.overleaf.com/), [GitHub](https://github.com/willdfonseca/latex/tree/main/FIA%202024) y [Sitio FIA 2024](https://www.fia2024.cl/).
+
+- Versión en Portugués: [Overleaf](https://www.overleaf.com/read/tjbcfwbtfdtz#869489) 🌊
+- Versión en Español: [Overleaf](https://www.overleaf.com/read/txvwtjmpvwcc#cdb016)
+- Versión de la plantilla en Word: [GitHub](https://github.com/willdfonseca/latex/tree/main/FIA%202024)
+
+> El texto básico (en portugués brasileño y español), así como la plantilla LaTeX, fueron desarrollados por el Prof. Will D'Andrea Fonseca.
+
+##
+
 ###   :books: Official Sobrac 2023 Congress Templates
 Sobrac 2023 is the **XXX Meeting of Brazilian Society of Acoustics**.
 See the website at: https://www.even3.com.br/sobracnatal2023/
 
-The congress official LaTeX templates (Portuguese) is simutaneously hosted in [Overleaf](https://www.overleaf.com/) and [GitHub](https://github.com/willdfonseca/latex).    
+The congress official LaTeX templates (Portuguese) is simultaneously hosted in [Overleaf](https://www.overleaf.com/) and [GitHub](https://github.com/willdfonseca/latex).    
 
  - Portuguese version: [Overleaf](https://www.overleaf.com/read/xnhkrtjwprcn) 🌊
   - Word template version: [GitHub](https://github.com/willdfonseca/latex/blob/main/Sobrac/2023/Template%20Sobrac%202023%20-%20Ms%20Word%20(Portugu%C3%AAs).docx)
